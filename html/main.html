@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schneid, Marzin & Co</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <link href="../css/styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo" data-en="Schneid, Marzin & Co" data-he="שנייד מרזין ושות'"></div>
+                <div class="nav-right">
+                    <ul class="nav-links">
+                        <li><a href="#about" data-en="About" data-he="אודות">About</a></li>
+                        <li><a href="#services" data-en="Services" data-he="התמחויות">Services</a></li>
+                        <li><a href="#theteam" data-en="The Team" data-he="הצוות">The Team</a></li>
+                        <li><a href="#testimonials" data-en="Testimonials" data-he="המלצות">Testimonials</a></li>
+                        <li class="contact-icons">
+                            <a href="mailto:info@schneidlaw.com" class="icon-link" title="Email Us">
+                                ✉️
+                            </a>
+                            <a href="https://wa.me/1234567890" class="icon-link" title="WhatsApp" target="_blank">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="#25D366">
+                                    <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/>
+                                </svg>
+                            </a>
+                            <a href="tel:555-123-4567" class="icon-link" title="Call Us">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                                    <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- Replace the language switcher button in the header -->
+                    <div class="language-dropdown">
+                        <button class="language-switcher" onclick="toggleDropdown(event)">
+                            <span id="selectedFlag">
+                                <svg class="flag-icon" width="24" height="16" viewBox="0 0 24 16">
+                                    <!-- American Flag -->
+                                    <rect width="24" height="16" fill="#fff"/>
+                                    <g fill="#bf0a30">
+                                        <rect y="0" width="24" height="1.23"/>
+                                        <rect y="2.46" width="24" height="1.23"/>
+                                        <rect y="4.92" width="24" height="1.23"/>
+                                        <rect y="7.38" width="24" height="1.23"/>
+                                        <rect y="9.84" width="24" height="1.23"/>
+                                        <rect y="12.3" width="24" height="1.23"/>
+                                        <rect y="14.76" width="24" height="1.24"/>
+                                    </g>
+                                    <rect width="12" height="8.615" fill="#002868"/>
+                                    <g fill="#fff">
+                                        <circle cx="2.4" cy="1.8" r=".5"/>
+                                        <circle cx="4.8" cy="1.8" r=".5"/>
+                                        <circle cx="7.2" cy="1.8" r=".5"/>
+                                        <circle cx="9.6" cy="1.8" r=".5"/>
+                                        <circle cx="3.6" cy="3.4" r=".5"/>
+                                        <circle cx="6" cy="3.4" r=".5"/>
+                                        <circle cx="8.4" cy="3.4" r=".5"/>
+                                        <circle cx="2.4" cy="5" r=".5"/>
+                                        <circle cx="4.8" cy="5" r=".5"/>
+                                        <circle cx="7.2" cy="5" r=".5"/>
+                                        <circle cx="9.6" cy="5" r=".5"/>
+                                        <circle cx="3.6" cy="6.6" r=".5"/>
+                                        <circle cx="6" cy="6.6" r=".5"/>
+                                        <circle cx="8.4" cy="6.6" r=".5"/>
+                                    </g>
+                                </svg>
+                            </span>
+                            <span class="dropdown-arrow">▼</span>
+                        </button>
+                        <div class="language-options" id="languageOptions">
+                            <div class="language-option" onclick="changeLanguage('en')">
+                                <svg class="flag-icon" width="24" height="16" viewBox="0 0 24 16">
+                                    <!-- American Flag -->
+                                    <rect width="24" height="16" fill="#fff"/>
+                                    <g fill="#bf0a30">
+                                        <rect y="0" width="24" height="1.23"/>
+                                        <rect y="2.46" width="24" height="1.23"/>
+                                        <rect y="4.92" width="24" height="1.23"/>
+                                        <rect y="7.38" width="24" height="1.23"/>
+                                        <rect y="9.84" width="24" height="1.23"/>
+                                        <rect y="12.3" width="24" height="1.23"/>
+                                        <rect y="14.76" width="24" height="1.24"/>
+                                    </g>
+                                    <rect width="12" height="8.615" fill="#002868"/>
+                                    <g fill="#fff">
+                                        <circle cx="2.4" cy="1.8" r=".5"/>
+                                        <circle cx="4.8" cy="1.8" r=".5"/>
+                                        <circle cx="7.2" cy="1.8" r=".5"/>
+                                        <circle cx="9.6" cy="1.8" r=".5"/>
+                                        <circle cx="3.6" cy="3.4" r=".5"/>
+                                        <circle cx="6" cy="3.4" r=".5"/>
+                                        <circle cx="8.4" cy="3.4" r=".5"/>
+                                        <circle cx="2.4" cy="5" r=".5"/>
+                                        <circle cx="4.8" cy="5" r=".5"/>
+                                        <circle cx="7.2" cy="5" r=".5"/>
+                                        <circle cx="9.6" cy="5" r=".5"/>
+                                        <circle cx="3.6" cy="6.6" r=".5"/>
+                                        <circle cx="6" cy="6.6" r=".5"/>
+                                        <circle cx="8.4" cy="6.6" r=".5"/>
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="language-option" onclick="changeLanguage('he')">
+                                <svg class="flag-icon" width="24" height="16" viewBox="0 0 24 16">
+                                    <!-- Israeli Flag -->
+                                    <rect width="24" height="16" fill="#fff"/>
+                                    <rect y="2" width="24" height="3" fill="#0038b8"/>
+                                    <rect y="11" width="24" height="3" fill="#0038b8"/>
+                                    <path d="M12 4.5L9 9.5h6z" fill="#0038b8"/>
+                                    <path d="M12 11.5L9 6.5h6z" fill="#0038b8"/>
+                                </svg>
+                            </div>
+                            <div class="language-option" onclick="changeLanguage('ru')">
+                                <svg class="flag-icon" width="24" height="16" viewBox="0 0 24 16">
+                                    <!-- Russian Flag -->
+                                    <rect width="24" height="16" fill="#fff"/>
+                                    <rect y="5.33" width="24" height="5.33" fill="#0039A6"/>
+                                    <rect y="10.66" width="24" height="5.33" fill="#D52B1E"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+                </div>
+            </nav>
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="#about" onclick="closeMobileMenu()" data-en="About" data-he="אודות">About</a>
+                <a href="#services" onclick="closeMobileMenu()" data-en="Services" data-he="שירותים">Services</a>
+                <a href="#results" onclick="closeMobileMenu()" data-en="Results" data-he="תוצאות">Results</a>
+                <a href="#testimonials" onclick="closeMobileMenu()" data-en="The Team" data-he="הצוות">Testimonials</a>
+                <a href="tel:555-123-4567" onclick="closeMobileMenu()">(555) 123-4567</a>
+                <div style="padding: 15px 20px; border-top: 1px solid #2d3748;">
+                    <button class="language-switcher" onclick="toggleLanguage(); closeMobileMenu();" style="width: 100%;">
+                        <span id="langTextMobile">🇮🇱 עברית</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Video Hero Section -->
+    <section class="hero-section">
+        <video class="video-background" autoplay muted loop playsinline>
+            <source src="https://player.vimeo.com/external/368763065.sd.mp4?s=13d9fa8e8e5f9404d07939b4ef4cbb4adc6ed991&profile_id=165&oauth2_token_id=57447761" type="video/mp4">
+        </video>
+        <div class="video-overlay"></div>
+        
+        <div class="container">
+            <div class="hero-content fade-in">
+                <div class="hero-badge" data-en="Serving Clients Since 2009" data-he="משרתים לקוחות מאז 2009">Serving Clients Since 2009</div>
+                <h1 class="hero-title" data-en="Experienced Legal Counsel You Can Trust" data-he="יעוץ משפטי מנוסה שאפשר לסמוך עליו">Experienced Legal Counsel You Can Trust</h1>
+                <p class="hero-subtitle" data-en="When legal challenges arise, you need attorneys who combine decades of experience with personalized attention. We fight for your rights and deliver results." data-he="כשמתעוררים אתגרים משפטיים, אתם זקוקים לעורכי דין המשלבים עשרות שנות ניסיון עם טיפול אישי. אנו נלחמים למען זכויותיכם ומביאים תוצאות.">When legal challenges arise, you need attorneys who combine decades of experience with personalized attention. We fight for your rights and deliver results.</p>
+                
+                <!--<div class="hero-stats>
+                    <div class="stat">
+                        <span class="stat-number">15+</span>
+                        <span class="stat-label" data-en="Years Experience" data-he="שנות ניסיון">Years Experience</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label" data-en="Cases Won" data-he="תיקים שנוצחו">Cases Won</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">$50M+</span>
+                        <span class="stat-label" data-en="Recovered" data-he="שוחזר">Recovered</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label" data-en="Available" data-he="זמין">Available</span>
+                    </div>
+                </div>-->
+
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn-primary" data-en="📞 Free Consultation" data-he="📞 ייעוץ חינם">
+                        📞 Free Consultation
+                    </a>
+                    <a href="#about" class="btn-secondary" data-en="📋 Learn More" data-he="📋 למידע נוסף">
+                        📋 Learn More
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Contact -->
+    <section class="quick-contact">
+        <div class="container">
+            <div class="contact-items">
+                <div class="contact-item">
+                    <i>📍</i>
+                    <span data-en="123 Main Street, Your City, ST 12345" data-he="רחוב הראשי 123, העיר שלכם, מיקוד 12345">123 Main Street, Your City, ST 12345</span>
+                </div>
+                <div class="contact-item">
+                    <i>📞</i>
+                    <span>(555) 123-4567</span>
+                </div>
+                <div class="contact-item">
+                    <i>📧</i>
+                    <span>info@schneidlaw.com</span>
+                </div>
+                <div class="contact-item">
+                    <i>⏰</i>
+                    <span data-en="24/7 Emergency Service" data-he="שירות חירום 24/7">24/7 Emergency Service</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text scroll-reveal">
+                    <h2 data-en="Dedicated Legal Advocates Fighting for You" data-he="סנגורים משפטיים מסורים הנלחמים בשבילכם">Dedicated Legal Advocates Fighting for You</h2>
+                    <p data-en="Schneid Marzin & Co. law firm deals with civil matters, including representing companies and private clients in various fields." data-he="שנייד, מרזין ושות' הינו משרד עורכי דין העוסק בתחום האזרחי, לרבות, ייצוג חברות ולקוחות פרטיים בתחומים שונים.">At Johnson & Associates, we understand that legal issues can be overwhelming and stressful. With over 15 years of combined experience, our team has successfully represented clients in a wide range of legal matters.</p>
+                    <p data-en="Our firm specializes in real estate and land transactions, taxes, including real estate taxation, international taxation and various exemptions from income tax, as well as in tort law, medical malpractice and the exercise of rights in the National Insurance Institute and against insurance companies. In addition, the firm provides its clients with services in drafting wills, inheritances and durable powers of attorney." data-he="משרדנו מתמחה בעסקאות נדל&quot;ן ומקרקעין, מיסים לרבות מיסוי מקרקעין, מיסוי בינלאומי ופטורים שונים ממס ההכנסה וכן בדיני נזיקין, רשלנות רפואית ומימוש זכויות בביטוח הלאומי ומול חברות הביטוח. בנוסף המשרד נותן שירות ללקוחותיו בעריכת צוואות, ירושות וכן בייפוי כח מתמשך.">We pride ourselves on providing personalized attention, clear communication, and aggressive representation when needed. Our track record speaks for itself - we've recovered over $50 million for our clients.</p>
+                    
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">✓</div>
+                            <span data-en="Board Certified Attorneys" data-he="עורכי דין מוסמכים">Board Certified Attorneys</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">✓</div>
+                            <span data-en="No Fee Unless We Win" data-he="ללא שכר טרחה עד לניצחון">No Fee Unless We Win</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">✓</div>
+                            <span data-en="Free Initial Consultation" data-he="ייעוץ ראשוני חינם">Free Initial Consultation</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">✓</div>
+                            <span data-en="24/7 Case Support" data-he="תמיכה בתיקים 24/7">24/7 Case Support</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Replace the attorney-duo-image div with a single modern office image -->
+                <div class="attorney-image scroll-reveal">
+                    <img src="https://images.unsplash.com/photo-1604328698692-f76ea9498e76?w=1200&h=800&fit=crop" 
+                         alt="Modern Law Office Meeting Room" 
+                         class="modern-office-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header scroll-reveal">
+                <h2 class="section-title" data-en="Our Practice Areas" data-he="תחומי התמחותנו">Our Practice Areas</h2>
+                <p class="section-subtitle" data-en="We provide comprehensive legal services across multiple practice areas, delivering results that matter." data-he="אנו מעניקים שירותים משפטיים מקיפים במגוון תחומי התמחות, ומביאים תוצאות שחשובות.">We provide comprehensive legal services across multiple practice areas, delivering results that matter.</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card scroll-reveal">
+                    <div class="service-icon">⚖️</div>
+                    <h3 data-en="Personal Injury" data-he="נזיקין">Personal Injury</h3>
+                    <p data-en="Comprehensive representation for accident victims including car accidents, slip and falls, workplace injuries, and wrongful death cases. We fight for maximum compensation." data-he="המשרד עוסק בייצוג תובעים בתביעות נזיקין, רשלנות רפואית, תאונות דרכים (פלת&quot;ד) וייצוג בוועדות רפואיות בביטוח הלאומי.
+פעילות המשרד כוללת ליטגיציה, ניהול משא ומתן מקדים להליך, ניהול תביעות גוף ורכוש, הגשת תביעות לביטוח לאומי, ביטוח תאונות תלמידים ועוד.">Comprehensive representation for accident victims including car accidents, slip and falls, workplace injuries, and wrongful death cases. We fight for maximum compensation.</p>
+                    <a href="#contact" class="service-link" data-en="Get Help Now →" data-he="← קבלו עזרה עכשיו">Get Help Now →</a>
+                </div>
+                <div class="service-card scroll-reveal">
+                    <div class="service-icon">🏢</div>
+                    <h3 data-en="Taxation Laws" data-he="דיני מיסוי">Business Law</h3>
+                    <p data-en="Strategic legal guidance for businesses including contract disputes, employment law, business formation, and commercial litigation matters." data-he="המשרד עוסק בכל תחומי המיסוי- אזרחי, מס הכנסה, מיסוי מקרקעין, מע&quot;מ ומיסוי בינלאומי.
+פעילות המשרד כללת ייעוץ וליווי עסקאות, ייעוץ מיסוי שוטף, ייצוג והתדיינות מול רשויות המס השונות וכן ייצוג למול בתי המשפט.
+">Strategic legal guidance for businesses including contract disputes, employment law, business formation, and commercial litigation matters.</p>
+                    <a href="#contact" class="service-link" data-en="Learn More →" data-he="← למידע נוסף">Learn More →</a>
+                </div>
+                <div class="service-card scroll-reveal">
+                    <div class="service-icon">🏠</div>
+                    <h3 data-en="Real Estate Law" data-he="דיני נדל״ן">Real Estate Law</h3>
+                    <p data-en="Expert handling of property transactions, title disputes, landlord-tenant issues, and real estate litigation matters with attention to detail." data-he="המשרד עוסק בטיפול בכל ההיבטים והסוגיות המשפטיות והעסקיות בתחום הנדל&quot;ן והמקרקעין בישראל. 
+פעילות המשרד כוללת ליווי עסקאות מקרקעין מורכבות כגון רכישת קרקעות, עסקאות קומבינציה, מכרזים, הסכמי ביצוע נכסים מניבים, עסקאות פרטיות וכו'. למשרד אף מומחיות בתחום ההתחדשות העירונית, פרויקטים בתחום פינוי בינוי וכן פרויקטים מכח תמ&quot;א 38.">Expert handling of property transactions, title disputes, landlord-tenant issues, and real estate litigation matters with attention to detail.</p>
+                    <a href="#contact" class="service-link" data-en="Get Started →" data-he="← התחילו כאן">Get Started →</a>
+                </div>
+                <div class="service-card scroll-reveal">
+                    <div class="service-icon">👨‍👩‍👧‍👦</div>
+                    <h3 data-en="Wills and Inheritances" data-he="צוואות וירושות">Family Law</h3>
+                    <p data-en="Compassionate representation in divorce proceedings, child custody disputes, alimony matters, and domestic relations cases." data-he="המשרד צבר ידע בתחומים מיוחדים כגון טיפול לדור השלישי.
+במסגרת טיפול מיוחד זה, פעילות המשרד כוללת כתיבת צוואות וירושות המשלבות נכסים מניבים, כתיבת ייפוי כח מתמשך וליווי שוטף להסדרה למול הרשויות השונות.
+">Compassionate representation in divorce proceedings, child custody disputes, alimony matters, and domestic relations cases.</p>
+                    <a href="#contact" class="service-link" data-en="Schedule Consultation →" data-he="← קבעו ייעוץ">Schedule Consultation →</a>
+                </div>
+                <!--
+                <div class="service-card scroll-reveal">
+                    <div class="service-icon">🛡️</div>
+                    <h3 data-en="Criminal Defense" data-he="הגנה פלילית">Criminal Defense</h3>
+                    <p data-en="Aggressive defense representation for DUI, drug charges, theft, assault, and other criminal matters. Protecting your rights is our priority." data-he="ייצוג הגנה אגרסיבי לנהיגה תחת השפעה, אישומי סמים, גניבה, תקיפה ועבירות פליליות אחרות. הגנה על זכויותיכם היא העדיפות שלנו.">Aggressive defense representation for DUI, drug charges, theft, assault, and other criminal matters. Protecting your rights is our priority.</p>
+                    <a href="#contact" class="service-link" data-en="Urgent Help →" data-he="← עזרה דחופה">Urgent Help →</a>
+                </div>-->
+                <div class="service-card scroll-reveal">
+                    <div class="service-icon">📋</div>
+                    <h3 data-en="Estate Planning" data-he="תכנון נכסים">Estate Planning</h3>
+                    <p data-en="Comprehensive estate planning services including wills, trusts, probate administration, and asset protection strategies for your family's future." data-he="שירותי תכנון נכסים מקיפים כולל צוואות, נאמנויות, הליכי ירושה ואסטרטגיות הגנת נכסים לעתיד המשפחה.">Comprehensive estate planning services including wills, trusts, probate administration, and asset protection strategies for your family's future.</p>
+                    <a href="#contact" class="service-link" data-en="Plan Ahead →" data-he="← תכננו מראש">Plan Ahead →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Results Section -->
+    <!--<section class="results" id="results">
+        <div class="container">
+            <h2 class="section-title scroll-reveal" data-en="Our Track Record" data-he="הרקורד שלנו">Our Track Record</h2>
+            <p class="section-subtitle scroll-reveal" data-en="Numbers that demonstrate our commitment to achieving results for our clients." data-he="מספרים המדגימים את המחויבות שלנו להשגת תוצאות עבור הלקוחות שלנו.">Numbers that demonstrate our commitment to achieving results for our clients.</p>
+            
+            <div class="results-grid">
+                <div class="result-item scroll-reveal">
+                    <div class="result-number">$50M+</div>
+                    <div class="result-label" data-en="Total Recovered" data-he="סך הכל שוחזר">Total Recovered</div>
+                </div>
+                <div class="result-item scroll-reveal">
+                    <div class="result-number">500+</div>
+                    <div class="result-label" data-en="Cases Won" data-he="תיקים שנוצחו">Cases Won</div>
+                </div>
+                <div class="result-item scroll-reveal">
+                    <div class="result-number">98%</div>
+                    <div class="result-label" data-en="Success Rate" data-he="אחוז הצלחה">Success Rate</div>
+                </div>
+                <div class="result-item scroll-reveal">
+                    <div class="result-number">15+</div>
+                    <div class="result-label" data-en="Years Experience" data-he="שנות ניסיון">Years Experience</div>
+                </div>
+            </div>
+        </div>
+    </section>-->
+    
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header scroll-reveal">
+                <h2 class="section-title" data-en="What Our Clients Say" data-he="מה הלקוחות שלנו אומרים">What Our Clients Say</h2>
+                <p class="section-subtitle" data-en="Real testimonials from satisfied clients who received the legal representation they deserved." data-he="המלצות אמיתיות מלקוחות מרוצים שקיבלו את הייצוג המשפטי שהיו ראויים לו.">Real testimonials from satisfied clients who received the legal representation they deserved.</p>
+            </div>
+            
+            <div class="testimonials-slider scroll-reveal">
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text" data-en=""Johnson & Associates handled my personal injury case with incredible professionalism and dedication. They secured a settlement that exceeded my expectations and kept me informed throughout the entire process. I couldn't have asked for better representation."" data-he=""ג'ונסון ושותפים טיפלו בתיק נזקי הגוף שלי עם מקצועיות ומסירות מדהימות. הם השיגו פיצוי שעלה על הציפיות שלי והחזיקו אותי מעודכן לאורך כל התהליך. לא יכולתי לבקש ייצוג טוב יותר."">"Johnson & Associates handled my personal injury case with incredible professionalism and dedication. They secured a settlement that exceeded my expectations and kept me informed throughout the entire process. I couldn't have asked for better representation."</p>
+                    <div class="testimonial-author" data-en="Sarah Martinez" data-he="שרה מרטינז">Sarah Martinez</div>
+                    <div class="testimonial-title" data-en="Personal Injury Client" data-he="לקוחת נזקי גוף">Personal Injury Client</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team" id="theteam">
+        <div class="container">
+            <h2 class="section-title scroll-reveal" data-en="Our Team" data-he="הצוות שלנו">Our Team</h2>
+            <p class="section-subtitle scroll-reveal" data-en="Meet our experienced legal professionals" data-he="הכירו את אנשי המקצוע המנוסים שלנו">Meet our experienced legal professionals</p>
+            
+            <div class="team-grid">
+                <!-- Nehemia -->
+                <div class="team-member scroll-reveal">
+                    <div class="member-photo-wrapper">
+                        <div class="hexagon">
+                            <img src="../pictures/nehemia.bmp" alt="Nehemia Schneid" class="member-photo">
+                        </div>
+                    </div>
+                    <h3 class="member-name" data-en="Nehemia Schneid" data-he="נחמיה שנייד">Nehemia Schneid</h3>
+                    <p class="member-title" data-en="Founding Director" data-he="שותף מנהל ומייסד">Founding Director</p>
+                    <p class="member-bio" data-en="Managing Partner and Founder of the firm, holds a law degree, responsible for tax law and commercial cases including labor law. His work at the firm includes representation in real estate taxation, tax assessments, voluntary disclosure procedures, withholding tax exemptions, preferred technological enterprise, structural changes, Innovation Authority grants, tax planning and consulting, and various tax solutions." data-he="שותף מנהל ומייסד המשרד, בעל תואר במשפטים, אחראי במשרד על דיני המיסים ותיקים בעלי אופי מסחרי לרבות דיני עבודה. בעבודתו במשרד מטפל בין השאר בייצוג למול מיסוי מקרקעין, דיוני שומה, הליכי גילוי מרצון, פטור מניכוי מס במקור, מפעל טכנולוגי מועדף, שינויי מבנה, מענקי רשות החדשנות, ייעוץ ותכנון מס ומגוון פתרונות מיסוי."></p>
+                </div>
+
+                <!-- David -->
+                <div class="team-member scroll-reveal">
+                    <div class="member-photo-wrapper">
+                        <div class="hexagon">
+                            <img src="../pictures/david.bmp" alt="David Marzin" class="member-photo">
+                        </div>
+                    </div>
+                    <h3 class="member-name" data-en="David Marzin" data-he="דוד מרזין">David Marzin</h3>
+                    <p class="member-title" data-en="Founding Partner" data-he="שותף מייסד">Founding Partner</p>
+                    <p class="member-bio" data-en="Founding Partner, holds a law degree, responsible for real estate transactions and contracts, as well as enforcement proceedings, wills, and lasting power of attorney. His work at the firm involves handling complex transactions, urban renewal, and dispute resolution. He also deals with commercial transactions, company sales, corporate consulting, company activity sales, engagement agreements, etc." data-he="שותף מייסד במשרד, בעל תואר במשפטים, אחראי במשרד על עסקאות המקרקעין וחוזי הנדל&quot;ן, כמו גם על תחום תיקי הוצאה לפועל, צוואות וייפוי כח מתמשך. בעבודתו במשרד מטפל בעסקאות מורכבות, התחדשות עירונית ויישוב סכסוכים. כמו כן עוסק בייצוג עסקאות מסחריות, מכר חברות, ייעוץ עבור תאגידים, מכר פעילויות חברה, הסכמי התקשרות וכד'."></p>
+                </div>
+
+                <!-- Maayan -->
+                <div class="team-member scroll-reveal">
+                    <div class="member-photo-wrapper">
+                        <div class="hexagon">
+                            <img src="assets/maayan.jpg" alt="Maayan Schneid" class="member-photo">
+                        </div>
+                    </div>
+                    <h3 class="member-name" data-en="Maayan Schneid" data-he="מעין שנייד">Maayan Schneid</h3>
+                    <p class="member-title" data-en="Associate" data-he="עורכת דין במשרד">Associate</p>
+                    <p class="member-bio" data-en="Attorney at the firm, holds a law degree, responsible for managing claims and litigation in tort law and medical malpractice, road accident damages, and National Insurance claims. Her work at the firm involves conducting negotiations for clients, representation in various judicial instances, representation with insurance companies and various entities, handling and accompanying different committees in the National Insurance Institute." data-he="עו&quot;ד במשרד, בעלת תואר במשפטים, אחראית במשרד על ניהול תביעות וליטיגציה בתחום הנזיקין ורלשנות הרפואית, נזקי הפלת&quot;ד ותביעות ביטוח לאומי. בעבודתה במשרד עוסקת בניהול משא ומתן עבור הלקוח, ייצוג בערכאות השיפוטיות השונות, ייצוג למול חברות הביטוח והגופים השונים, מטפלת ומלווה בוועדות השונות בביטוח הלאומי."></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta" id="contact">
+        <div class="container">
+            <h2 class="scroll-reveal" data-en="Ready to Get Started?" data-he="מוכנים להתחיל?">Ready to Get Started?</h2>
+            <p class="scroll-reveal" data-en="Don't wait to get the legal help you need. Contact us today for a free consultation and let us put our experience to work for you." data-he="אל תחכו לקבל את העזרה המשפטית שאתם זקוקים לה. צרו איתנו קשר היום לייעוץ חינם ותנו לנו להפעיל את הניסיון שלנו בשבילכם.">Don't wait to get the legal help you need. Contact us today for a free consultation and let us put our experience to work for you.</p>
+            
+            <div class="cta-contact scroll-reveal">
+                <div class="contact-box">
+                    <h4 data-en="Call Now" data-he="התקשרו עכשיו">Call Now</h4>
+                    <p>(555) 123-4567</p>
+                    <a href="tel:555-123-4567" data-en="Call Today" data-he="התקשרו היום">Call Today</a>
+                </div>
+                <div class="contact-box">
+                    <h4 data-en="Email Us" data-he="שלחו לנו מייל">Email Us</h4>
+                    <p>info@johnsonlaw.com</p>
+                    <a href="mailto:info@schneidlaw.com" data-en="Send Message" data-he="שלחו הודעה">Send Message</a>
+                </div>
+                <div class="contact-box">
+                    <h4 data-en="Visit Office" data-he="בקרו במשרד">Visit Office</h4>
+                    <p data-en="123 Main Street" data-he="רחוב הראשי 123">123 Main Street</p>
+                    <a href="#" onclick="alert('Directions: 123 Main Street, Your City, ST 12345')" data-en="Get Directions" data-he="קבלו הוראות הגעה">Get Directions</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4 data-en="Contact Information" data-he="פרטי יצירת קשר">Contact Information</h4>
+                    <p data-en="123 Main Street, Your City, ST 12345, Phone: (555) 123-4567, Email: info@schneidlaw.com" data-he="רחוב הראשי 123, העיר שלכם, מיקוד 12345, טלפון: (555) 123-4567, מייל: info@schneidlaw.com">123 Main Street<br>
+                    Your City, ST 12345<br>
+                    Phone: (555) 123-4567<br>
+                    Email: info@johnsonlaw.com</p>
+                </div>
+                <div class="footer-section">
+                    <h4 data-en="Office Hours" data-he="שעות פעילות">Office Hours</h4>
+                    <p data-en="Sunday - Thursday: 8:00 AM - 6:00 PM: By Appointment, Emergency: 24/7 Available" data-he="ראשון - חמישי: 8:00 - 18:00: לפי תיאום, חירום: זמין 24/7">Sunday - Thursday: 8:00 AM - 6:00 PM<br>
+                    Saturday: 9:00 AM - 2:00 PM<br>
+                    Sunday: By Appointment<br>
+                    Emergency: 24/7 Available</p>
+                </div>
+                <div class="footer-section">
+                    <h4 data-en="Practice Areas" data-he="תחומי התמחות">Practice Areas</h4>
+                    <p data-en="Taxation Law, Personal Injury, Wills and Inheritances, Real Estate Law, Estate Planning" data-he="נזיקין, דיני מיסוי, דיני נדל״ן, צוואות וירושות, תכנון נכסים">
+                    Taxation Law<br>
+                    Personal Injury<br>
+                    Wills and Inheritances<br>
+                    Real Estate Law<br>
+                    Estate Planning</p>
+                </div>
+                <div class="footer-section">
+                    <h4 data-en="About Our Firm" data-he="אודות המשרד">About Our Firm</h4>
+                    <p data-en="Schneid Marzin & Co. law firm deals with civil matters, including representing companies and private clients in various fields." data-he="שנייד, מרזין ושות' הינו משרד עורכי דין העוסק בתחום האזרחי, לרבות, ייצוג חברות ולקוחות פרטיים בתחומים שונים.">Johnson & Associates has been serving the community for over 15 years, providing experienced legal counsel and aggressive representation when you need it most.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-en="© 2025 Schneid Marzin & Co. All rights reserved. | Attorney Advertising | Privacy Policy | Terms of Service" data-he="© 2025 שנייד, מרזין ושות' כל הזכויות שמורות. | פרסום עורכי דין | מדיניות פרטיות | תנאי שירות">&copy;  2025 Schneid Marzin & Co. All rights reserved. | Attorney Advertising | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let currentLang = 'he';
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('active');
+            
+            const toggle = document.querySelector('.mobile-menu-toggle');
+            toggle.innerHTML = mobileMenu.classList.contains('active') ? '✕' : '☰';
+        }
+
+        function closeMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.remove('active');
+            
+            const toggle = document.querySelector('.mobile-menu-toggle');
+            toggle.innerHTML = '☰';
+        }
+
+        // Language Toggle Function
+        function toggleLanguage() {
+            const body = document.body;
+            const langText = document.getElementById('langText');
+            const langTextMobile = document.getElementById('langTextMobile');
+            
+            if (currentLang === 'en') {
+                // Switch to Hebrew
+                currentLang = 'he';
+                body.setAttribute('dir', 'rtl');
+                body.style.fontFamily = "'Noto Sans Hebrew', Arial, sans-serif";
+                langText.innerHTML = `
+                    <svg class="flag-icon" width="24" height="16" viewBox="0 0 24 16">
+                        <!-- American Flag -->
+                        <rect width="24" height="16" fill="#fff"/>
+                        <g fill="#bf0a30">
+                            <rect y="0" width="24" height="1.23"/>
+                            <rect y="2.46" width="24" height="1.23"/>
+                            <rect y="4.92" width="24" height="1.23"/>
+                            <rect y="7.38" width="24" height="1.23"/>
+                            <rect y="9.84" width="24" height="1.23"/>
+                            <rect y="12.3" width="24" height="1.23"/>
+                            <rect y="14.76" width="24" height="1.24"/>
+                        </g>
+                        <rect width="12" height="8.615" fill="#002868"/>
+                        <g fill="#fff">
+                            <circle cx="2.4" cy="1.8" r=".5"/>
+                            <circle cx="4.8" cy="1.8" r=".5"/>
+                            <circle cx="7.2" cy="1.8" r=".5"/>
+                            <circle cx="9.6" cy="1.8" r=".5"/>
+                            <circle cx="3.6" cy="3.4" r=".5"/>
+                            <circle cx="6" cy="3.4" r=".5"/>
+                            <circle cx="8.4" cy="3.4" r=".5"/>
+                            <circle cx="2.4" cy="5" r=".5"/>
+                            <circle cx="4.8" cy="5" r=".5"/>
+                            <circle cx="7.2" cy="5" r=".5"/>
+                            <circle cx="9.6" cy="5" r=".5"/>
+                            <circle cx="3.6" cy="6.6" r=".5"/>
+                            <circle cx="6" cy="6.6" r=".5"/>
+                            <circle cx="8.4" cy="6.6" r=".5"/>
+                        </g>
+                    </svg>
+                    English
+                `;
+                
+            } else {
+                // Switch to English
+                currentLang = 'en';
+                body.setAttribute('dir', 'ltr');
+                body.style.fontFamily = "'Georgia', serif";
+                langText.innerHTML = `
+                    <svg class="flag-icon" width="24" height="16" viewBox="0 0 24 16">
+                        <!-- Israeli Flag -->
+                        <rect width="24" height="16" fill="#fff"/>
+                        <rect y="2" width="24" height="3" fill="#0038b8"/>
+                        <rect y="11" width="24" height="3" fill="#0038b8"/>
+                        <path d="M12 4.5L9 9.5h6z" fill="#0038b8"/>
+                        <path d="M12 11.5L9 6.5h6z" fill="#0038b8"/>
+                    </svg>
+                    עברית
+                `;
+            }
+
+            // Update all text content
+            document.querySelectorAll('[data-he]').forEach(element => {
+                element.textContent = element.getAttribute('data-he');
+            });
+
+            // Update arrows for RTL
+            document.querySelectorAll('.service-link').forEach(link => {
+                if (link.textContent.includes('→')) {
+                    link.innerHTML = link.innerHTML.replace('→', '←');
+                }
+            });
+            
+            // Save language preference
+            localStorage.setItem('preferredLanguage', currentLang);
+        }
+
+        // Load saved language preference
+        function loadLanguagePreference() {
+            const savedLang = localStorage.getItem('preferredLanguage');
+            if (savedLang && savedLang !== currentLang) {
+                toggleLanguage();
+            }
+        }
+
+        // Close mobile menu on window resize
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                closeMobileMenu();
+            }
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Scroll reveal animation
+        function revealOnScroll() {
+            const elements = document.querySelectorAll('.scroll-reveal');
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                if (elementTop < windowHeight * 0.85) {
+                    element.classList.add('revealed');
+                }
+            });
+        }
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set initial Hebrew language
+            const body = document.body;
+            body.setAttribute('dir', 'rtl');
+            body.style.fontFamily = "'Noto Sans Hebrew', Arial, sans-serif";
+            
+            // Set initial flag to American flag since we're in Hebrew mode
+            const selectedFlag = document.getElementById('selectedFlag');
+            selectedFlag.innerHTML = getAmericanFlag();
+
+            // Update all text content to Hebrew
+            document.querySelectorAll('[data-he]').forEach(element => {
+                element.textContent = element.getAttribute('data-he');
+            });
+
+            // Update arrows for RTL
+            document.querySelectorAll('.service-link').forEach(link => {
+                if (link.textContent.includes('→')) {
+                    link.innerHTML = link.innerHTML.replace('→', '←');
+                }
+            });
+
+            // Run other initializations
+            revealOnScroll();
+        });
+
+        window.addEventListener('scroll', revealOnScroll);
+
+        // Dropdown functionality
+        function toggleDropdown(event) {
+            event.stopPropagation();
+            const options = document.getElementById('languageOptions');
+            options.style.display = options.style.display === 'block' ? 'none' : 'block';
+        }
+
+        // Helper functions to get flag SVGs
+        function getAmericanFlag() {
+            return `<svg class="flag-icon" width="24" height="16" viewBox="0 0 24 16">
+                <rect width="24" height="16" fill="#fff"/>
+                <g fill="#bf0a30">
+                    <rect y="0" width="24" height="1.23"/>
+                    <rect y="2.46" width="24" height="1.23"/>
+                    <rect y="4.92" width="24" height="1.23"/>
+                    <rect y="7.38" width="24" height="1.23"/>
+                    <rect y="9.84" width="24" height="1.23"/>
+                    <rect y="12.3" width="24" height="1.23"/>
+                    <rect y="14.76" width="24" height="1.24"/>
+                </g>
+                <rect width="12" height="8.615" fill="#002868"/>
+                <g fill="#fff">
+                    <circle cx="2.4" cy="1.8" r=".5"/>
+                    <circle cx="4.8" cy="1.8" r=".5"/>
+                    <circle cx="7.2" cy="1.8" r=".5"/>
+                    <circle cx="9.6" cy="1.8" r=".5"/>
+                    <circle cx="3.6" cy="3.4" r=".5"/>
+                    <circle cx="6" cy="3.4" r=".5"/>
+                    <circle cx="8.4" cy="3.4" r=".5"/>
+                    <circle cx="2.4" cy="5" r=".5"/>
+                    <circle cx="4.8" cy="5" r=".5"/>
+                    <circle cx="7.2" cy="5" r=".5"/>
+                    <circle cx="9.6" cy="5" r=".5"/>
+                    <circle cx="3.6" cy="6.6" r=".5"/>
+                    <circle cx="6" cy="6.6" r=".5"/>
+                    <circle cx="8.4" cy="6.6" r=".5"/>
+                </g>
+            </svg>`;
+        }
+
+        function getIsraeliFlag() {
+            return `<svg class="flag-icon" width="24" height="16" viewBox="0 0 24 16">
+                <rect width="24" height="16" fill="#fff"/>
+                <rect y="2" width="24" height="3" fill="#0038b8"/>
+                <rect y="11" width="24" height="3" fill="#0038b8"/>
+                <path d="M12 4.5L9 9.5h6z" fill="#0038b8"/>
+                <path d="M12 11.5L9 6.5h6z" fill="#0038b8"/>
+            </svg>`;
+        }
+
+        function getRussianFlag() {
+            return `<svg class="flag-icon" width="24" height="16" viewBox="0 0 24 16">
+                <rect width="24" height="16" fill="#fff"/>
+                <rect y="5.33" width="24" height="5.33" fill="#0039A6"/>
+                <rect y="10.66" width="24" height="5.33" fill="#D52B1E"/>
+            </svg>`;
+        }
+
+        function changeLanguage(lang) {
+            currentLang = lang;
+            const body = document.body;
+            const selectedFlag = document.getElementById('selectedFlag');
+            
+            switch(lang) {
+                case 'en':
+                    body.setAttribute('dir', 'ltr');
+                    body.style.fontFamily = "'Georgia', serif";
+                    // Show Israeli and Russian flags since we're in English
+                    selectedFlag.innerHTML = `
+                        <div style="display: flex; gap: 5px;">
+                            ${getIsraeliFlag()}
+                            ${getRussianFlag()}
+                        </div>
+                    `;
+                    break;
+                    
+                case 'he':
+                    body.setAttribute('dir', 'rtl');
+                    body.style.fontFamily = "'Noto Sans Hebrew', Arial, sans-serif";
+                    // Show American and Russian flags since we're in Hebrew
+                    selectedFlag.innerHTML = `
+                        <div style="display: flex; gap: 5px;">
+                            ${getAmericanFlag()}
+                            ${getRussianFlag()}
+                        </div>
+                    `;
+                    break;
+                    
+                case 'ru':
+                    body.setAttribute('dir', 'ltr');
+                    body.style.fontFamily = "'Arial', sans-serif";
+                    // Show American and Israeli flags since we're in Russian
+                    selectedFlag.innerHTML = `
+                        <div style="display: flex; gap: 5px;">
+                            ${getAmericanFlag()}
+                            ${getIsraeliFlag()}
+                        </div>
+                    `;
+                    break;
+            }
+
+            // Update text content
+            document.querySelectorAll('[data-' + lang + ']').forEach(element => {
+                element.textContent = element.getAttribute('data-' + lang);
+            });
+
+            // Update arrows for RTL
+            if (lang === 'he') {
+                document.querySelectorAll('.service-link').forEach(link => {
+                    if (link.textContent.includes('→')) {
+                        link.innerHTML = link.innerHTML.replace('→', '←');
+                    }
+                });
+            } else {
+                document.querySelectorAll('.service-link').forEach(link => {
+                    if (link.textContent.includes('←')) {
+                        link.innerHTML = link.innerHTML.replace('←', '→');
+                    }
+                });
+            }
+            
+            // Save language preference
+            localStorage.setItem('preferredLanguage', lang);
+            
+            // Close dropdown
+            document.getElementById('languageOptions').style.display = 'none';
+        }
+
+        // Close dropdown if clicked outside
+        window.addEventListener('click', function() {
+            const options = document.getElementById('languageOptions');
+            options.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
