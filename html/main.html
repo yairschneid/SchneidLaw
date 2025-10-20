@@ -152,29 +152,6 @@
         
         <div class="container">
             <div class="hero-content fade-in">
-                <!--<div class="hero-badge" data-en="Serving Clients Since 2009" data-he="">Serving Clients Since 2009</div>
-                <h1 class="hero-title" data-en="Experienced Legal Counsel You Can Trust" data-he="">Experienced Legal Counsel You Can Trust</h1>
-                <p class="hero-subtitle" data-en="When legal challenges arise, you need attorneys who combine decades of experience with personalized attention. We fight for your rights and deliver results." data-he="">When legal challenges arise, you need attorneys who combine decades of experience with personalized attention. We fight for your rights and deliver results.</p>
-                
-                <div class="hero-stats>
-                    <div class="stat">
-                        <span class="stat-number">15+</span>
-                        <span class="stat-label" data-en="Years Experience" data-he="שנות ניסיון">Years Experience</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">500+</span>
-                        <span class="stat-label" data-en="Cases Won" data-he="תיקים שנוצחו">Cases Won</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">$50M+</span>
-                        <span class="stat-label" data-en="Recovered" data-he="שוחזר">Recovered</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">24/7</span>
-                        <span class="stat-label" data-en="Available" data-he="זמין">Available</span>
-                    </div>
-                </div>-->
-
                 <div class="cta-buttons">
                     <a href="#contact" class="btn-primary" data-en="📞 Free Consultation" data-he="📞 ייעוץ חינם">
                         📞 Free Consultation
@@ -481,16 +458,20 @@
                 body.setAttribute('dir', 'ltr');
                 body.style.fontFamily = currentLang === 'ru' ? "'Arial', sans-serif" : "'Georgia', serif";
             }
+
+            // Update all text content using translations
+            document.querySelectorAll('[data-trans-key]').forEach(element => {
+                const key = element.getAttribute('data-trans-key');
+                if (translations[currentLang] && translations[currentLang][key]) {
+                    element.textContent = translations[currentLang][key];
+                }
+            });
+
+            // Update elements with data-en/data-he/data-ru attributes
+            document.querySelectorAll('[data-' + currentLang + ']').forEach(element => {
+                element.textContent = element.getAttribute('data-' + currentLang);
+            });
         }
-            
-            // Set direction and font based on language
-            if (currentLang === 'he') {
-                body.setAttribute('dir', 'rtl');
-                body.style.fontFamily = "'Noto Sans Hebrew', Arial, sans-serif";
-            } else {
-                body.setAttribute('dir', 'ltr');
-                body.style.fontFamily = currentLang === 'ru' ? "'Arial', sans-serif" : "'Georgia', serif";
-            }
 
             // Update all text content using translations
             document.querySelectorAll('[data-trans-key]').forEach(element => {
@@ -580,19 +561,15 @@
                 `;
             }
 
-            // Update all text content using translations
-            document.querySelectorAll('[data-trans-key]').forEach(element => {
-                const key = element.getAttribute('data-trans-key');
-                const translationKey = `${key}-${currentLang}`;
-                if (translations[translationKey]) {
-                    element.textContent = translations[translationKey];
-                }
-            });
+            // Apply translations and update UI
+            applyTranslations();
 
             // Update arrows for RTL
             document.querySelectorAll('.service-link').forEach(link => {
-                if (link.textContent.includes('→')) {
+                if (currentLang === 'he') {
                     link.innerHTML = link.innerHTML.replace('→', '←');
+                } else {
+                    link.innerHTML = link.innerHTML.replace('←', '→');
                 }
             });
             
@@ -656,17 +633,18 @@
             selectedFlag.innerHTML = getAmericanFlag();
 
             // Apply initial translations
-            document.querySelectorAll('[data-trans-key]').forEach(element => {
-                const key = element.getAttribute('data-trans-key');
-                if (translations['he'] && translations['he'][key]) {
-                    element.textContent = translations['he'][key];
-                }
-            });
+            applyTranslations();
 
             // Run other initializations
             revealOnScroll();
+            
+            // Check for saved language preference
+            const savedLang = localStorage.getItem('preferredLanguage');
+            if (savedLang && savedLang !== 'he') {
+                changeLanguage(savedLang);
+            }
         });
-    </script>
+        // Add scroll event listener
         window.addEventListener('scroll', revealOnScroll);
 
         // Dropdown functionality
@@ -756,12 +734,7 @@
             }
 
             // Apply translations
-            document.querySelectorAll('[data-trans-key]').forEach(element => {
-                const key = element.getAttribute('data-trans-key');
-                if (translations[lang] && translations[lang][key]) {
-                    element.textContent = translations[lang][key];
-                }
-            });
+            applyTranslations();
             
             // Save language preference
             localStorage.setItem('preferredLanguage', lang);
