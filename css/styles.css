@@ -197,6 +197,13 @@
     color: #b8860b;
 }
 
+.logo-text {
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
 .nav-links {
     display: flex;
     list-style: none;
