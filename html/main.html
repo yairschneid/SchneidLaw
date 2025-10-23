@@ -11,23 +11,17 @@
 </head>
 <body>
 
-    <!-- Floating Action Button -->
-    <button id="fab" aria-label="Open panel" aria-expanded="false" title="Toggle panel">☰</button>
-
-    <!-- Panel that the FAB toggles -->
-    <aside id="fab-panel" aria-hidden="true">
-        <header>
-        <strong>Quick Panel</strong>
-        <button id="fab-panel-close" aria-label="Close panel">✕</button>
-        </header>
-        <div class="panel-body">
-        <p>Put quick links or controls here.</p>
-        <ul>
-            <li><a href="#action1">Action 1</a></li>
-            <li><a href="#action2">Action 2</a></li>
-        </ul>
-        </div>
-    </aside>
+    <!-- Floating Action Buttons -->
+    <div class="floating-buttons">
+        <button class="fab-button" onclick="window.openWhatsAppChat()" aria-label="Open WhatsApp Chat" title="Start WhatsApp Chat">
+            <img src="../pictures/whatsapp icon transparent.png" alt="WhatsApp" class="fab-whatsapp-icon">
+        </button>
+        <button class="fab-button" onclick="window.openEmailClient()" aria-label="Send Email" title="Send Email">
+            <svg class="fab-email-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+        </button>
+    </div>
 
     <!-- Accessibility Widget -->
     <div class="accessibility-widget" id="accessibilityWidget">
@@ -243,7 +237,7 @@
     <!-- Video Hero Section -->
     <section class="hero-section">
         <video class="video-background" autoplay muted loop playsinline>
-            <source src="https://player.vimeo.com/external/368763065.sd.mp4?s=13d9fa8e8e5f9404d07939b4ef4cbb4adc6ed991&profile_id=165&oauth2_token_id=57447761" type="video/mp4">
+            <source src="../pictures/timlapse.mp4" type="video/mp4">
         </video>
         <div class="video-overlay"></div>
         
@@ -529,8 +523,9 @@
         </div>
     </footer>
 
-    <!-- Import accessibility features -->
+    <!-- Import scripts -->
     <script src="../js/accessibility.js"></script>
+    <script src="../js/whatsapp.js"></script>
     
     <script type="module">
         // Import translations
