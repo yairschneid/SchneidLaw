@@ -6,8 +6,105 @@
     <title>Schneid, Marzin & Co</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@400;500;600;700;900&display=swap" rel="stylesheet">
     <link href="../css/styles.css" rel="stylesheet">
+    <link href="../js/accessibility.js" rel="stylesheet">
+    <link href="../js/fab-userscript.user.js" rel="stylesheet">
 </head>
 <body>
+
+    <!-- Floating Action Button -->
+    <button id="fab" aria-label="Open panel" aria-expanded="false" title="Toggle panel">☰</button>
+
+    <!-- Panel that the FAB toggles -->
+    <aside id="fab-panel" aria-hidden="true">
+        <header>
+        <strong>Quick Panel</strong>
+        <button id="fab-panel-close" aria-label="Close panel">✕</button>
+        </header>
+        <div class="panel-body">
+        <p>Put quick links or controls here.</p>
+        <ul>
+            <li><a href="#action1">Action 1</a></li>
+            <li><a href="#action2">Action 2</a></li>
+        </ul>
+        </div>
+    </aside>
+
+    <!-- Accessibility Widget -->
+    <div class="accessibility-widget" id="accessibilityWidget">
+        <button class="accessibility-toggle" aria-label="Open accessibility menu" aria-expanded="false" data-tooltip="Accessibility Menu (Alt + A)">
+            <img src="../pictures/accessibility-icon.svg" alt="Accessibility" width="24" height="24">
+        </button>
+        <div class="accessibility-menu" id="accessibilityMenu" role="menu" aria-hidden="true" tabindex="-1">
+            <h3 data-en="Accessibility Menu" data-he="תפריט נגישות" data-ru="Меню доступности">Accessibility Menu</h3>
+            
+            <!-- Font Size Controls -->
+            <button 
+                onclick="window.accessibilityWidget.adjustFontSize(1)"
+                data-action="increase-font"
+                data-tooltip="Increase text size"
+                aria-label="Increase text size"
+                data-en="Increase Text" 
+                data-he="הגדל טקסט" 
+                data-ru="Увеличить текст">
+                <span class="icon">A+</span> Increase Text
+            </button>
+            <button 
+                onclick="window.accessibilityWidget.adjustFontSize(-1)"
+                data-action="decrease-font"
+                data-tooltip="Decrease text size"
+                aria-label="Decrease text size"
+                data-en="Decrease Text" 
+                data-he="הקטן טקסט" 
+                data-ru="Уменьшить текст">
+                <span class="icon">A-</span> Decrease Text
+            </button>
+            
+            <!-- Display Adjustments -->
+            <button 
+                onclick="window.accessibilityWidget.toggleHighContrast()"
+                data-tooltip="Toggle high contrast mode"
+                aria-label="Toggle high contrast mode"
+                data-en="High Contrast" 
+                data-he="ניגודיות גבוהה" 
+                data-ru="Высокий контраст">
+                <span class="icon">🎨</span> High Contrast
+            </button>
+            <button 
+                onclick="window.accessibilityWidget.toggleLinks()"
+                data-tooltip="Highlight all links on page"
+                aria-label="Highlight all links"
+                data-en="Highlight Links" 
+                data-he="הדגש קישורים" 
+                data-ru="Выделить ссылки">
+                <span class="icon">🔗</span> Highlight Links
+            </button>
+            
+            <!-- Reading Aids -->
+            <button 
+                onclick="window.accessibilityWidget.toggleDyslexiaFont()"
+                data-tooltip="Switch to dyslexia-friendly font"
+                aria-label="Toggle dyslexia font"
+                data-en="Dyslexia Font" 
+                data-he="גופן דיסלקציה" 
+                data-ru="Шрифт для дислексии">
+                <span class="icon">📝</span> Dyslexia Font
+            </button>
+            <button 
+                onclick="window.accessibilityWidget.toggleFocusMode()"
+                data-tooltip="Enable focus mode to reduce distractions"
+                aria-label="Toggle focus mode"
+                data-en="Focus Mode" 
+                data-he="מצב מיקוד" 
+                data-ru="Режим фокусировки">
+                <span class="icon">👁️</span> Focus Mode
+            </button>
+
+            <div class="accessibility-footer">
+                <small data-en="Press ESC to close" data-he="ESC לחץ לסגירה" data-ru="Нажмите ESC чтобы закрыть">Press ESC to close</small>
+            </div>
+        </div>
+    </div>
+
     <!-- Header -->
     <header class="header">
         <div class="container">
@@ -16,9 +113,9 @@
                 <div class="nav-right">
                     <ul class="nav-links">
                         <li><a href="#about" data-en="About" data-he="אודות" data-ru="О нас">אודות</a></li>
-                        <li><a href="#services" data-en="Services" data-he="התמחויות" data-ru="Услуги">התמחויות</li>
                         <li><a href="#theteam" data-en="The Team" data-he="הצוות" data-ru="Команда">הצוות</a></li>
-                        <li><a href="#testimonials" data-en="Testimonials" data-he="המלצות" data-ru="Отзывы">המלצות</a></li>
+                        <li><a href="#services" data-en="Practice Areas" data-he="תחומי התמחות" data-ru="Практика">תחומי התמחות</a></li>
+                        <li><a href="#contact" data-en="Contact" data-he="צור קשר" data-ru="Контакты">צור קשר</a></li>
                         <li class="contact-icons">
                             <a href="mailto:info@schneidlaw.com" class="icon-link" title="Email Us">
                                 ✉️
@@ -130,9 +227,9 @@
             </nav>
             <div class="mobile-menu" id="mobileMenu">
                 <a href="#about" onclick="closeMobileMenu()" data-en="About" data-he="אודות" data-ru="О нас">About</a>
-                <a href="#services" onclick="closeMobileMenu()" data-en="Services" data-he="שירותים" data-ru="Услуги">Services</a>
-                <a href="#results" onclick="closeMobileMenu()" data-en="Results" data-he="תוצאות" data-ru="Результаты">Results</a>
-                <a href="#testimonials" onclick="closeMobileMenu()" data-en="The Team" data-he="הצוות" data-ru="Команда">Testimonials</a>
+                <a href="#theteam" onclick="closeMobileMenu()" data-en="The Team" data-he="הצוות" data-ru="Команда">הצוות</a>
+                <a href="#services" onclick="closeMobileMenu()" data-en="Practice Areas" data-he="תחומי התמחות" data-ru="Практика">תחומי התמחות</a>
+                <a href="#contact" onclick="closeMobileMenu()" data-en="Contact" data-he="צור קשר" data-ru="Контакты">צור קשר</a>
                 <a href="tel:555-123-4567" onclick="closeMobileMenu()">(555) 123-4567</a>
                 <div style="padding: 15px 20px; border-top: 1px solid #2d3748;">
                     <button class="language-switcher" onclick="toggleLanguage(); closeMobileMenu();" style="width: 100%;">
@@ -164,30 +261,6 @@
         </div>
     </section>
 
-    <!-- Quick Contact -->
-    <section class="quick-contact">
-        <div class="container">
-            <div class="contact-items">
-                <div class="contact-item">
-                    <i>📍</i>
-                    <span data-en="123 Main Street, Your City, ST 12345" data-he="רחוב הראשי 123, העיר שלכם, מיקוד 12345" data-ru="ул. Главная 123, Ваш Город, СТ 12345">123 Main Street, Your City, ST 12345</span>
-                </div>
-                <div class="contact-item">
-                    <i>📞</i>
-                    <span>(555) 123-4567</span>
-                </div>
-                <div class="contact-item">
-                    <i>📧</i>
-                    <span>info@schneidlaw.com</span>
-                </div>
-                <div class="contact-item">
-                    <i>⏰</i>
-                    <span data-en="24/7 Emergency Service" data-he="שירות חירום 24/7" data-ru="Круглосуточная экстренная служба">24/7 Emergency Service</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- About Section -->
     <section class="about" id="about">
         <div class="container">
@@ -199,20 +272,22 @@
                     
                     <div class="about-features">
                         <div class="feature-item">
-                            <div class="feature-icon">✓</div>
-                            <span data-en="Board Certified Attorneys" data-he="עורכי דין מוסמכים">Board Certified Attorneys</span>
+                            <div class="feature-content">
+                                <span class="feature-icon-ltr">✓</span>
+                                <span class="feature-text" data-en="Board Certified Attorneys" data-he="עורכי דין מוסמכים">Board Certified Attorneys</span>
+                            </div>
                         </div>
                         <div class="feature-item">
-                            <div class="feature-icon">✓</div>
-                            <span data-en="No Fee Unless We Win" data-he="ללא שכר טרחה עד לניצחון">No Fee Unless We Win</span>
+                            <div class="feature-content">
+                                <span class="feature-icon-ltr">✓</span>
+                                <span class="feature-text" data-en="Free Initial Consultation" data-he="ייעוץ ראשוני חינם">Free Initial Consultation</span>
+                            </div>
                         </div>
                         <div class="feature-item">
-                            <div class="feature-icon">✓</div>
-                            <span data-en="Free Initial Consultation" data-he="ייעוץ ראשוני חינם">Free Initial Consultation</span>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-icon">✓</div>
-                            <span data-en="24/7 Case Support" data-he="תמיכה בתיקים 24/7">24/7 Case Support</span>
+                            <div class="feature-content">
+                                <span class="feature-icon-ltr">✓</span>
+                                <span class="feature-text" data-en="24/7 Case Support" data-he="תמיכה בתיקים 24/7">24/7 Case Support</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -221,6 +296,52 @@
                     <img src="https://images.unsplash.com/photo-1604328698692-f76ea9498e76?w=1200&h=800&fit=crop" 
                          alt="Modern Law Office Meeting Room" 
                          class="modern-office-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team" id="theteam">
+        <div class="container">
+            <h2 class="section-title scroll-reveal" data-en="Our Team" data-he="הצוות שלנו">Our Team</h2>
+            <p class="section-subtitle scroll-reveal" data-en="Meet our experienced legal professionals" data-he="הכירו את אנשי המקצוע המנוסים שלנו">Meet our experienced legal professionals</p>
+            
+            <div class="team-grid">
+                <!-- Nehemia -->
+                <div class="team-member scroll-reveal">
+                    <div class="member-photo-wrapper">
+                        <div class="hexagon">
+                            <img src="../pictures/nehemia.bmp" alt="Nehemia Schneid" class="member-photo">
+                        </div>
+                    </div>
+                    <h3 class="member-name" data-en="Nehemia Schneid" data-he="נחמיה שנייד">Nehemia Schneid</h3>
+                    <p class="member-title" data-en="Founding Director" data-he="שותף מנהל ומייסד">Founding Director</p>
+                    <p class="member-bio" data-en="Managing Partner and Founder of the firm, holds a law degree, responsible for tax law and commercial cases including labor law. His work at the firm includes representation in real estate taxation, tax assessments, voluntary disclosure procedures, withholding tax exemptions, preferred technological enterprise, structural changes, Innovation Authority grants, tax planning and consulting, and various tax solutions." data-he="שותף מנהל ומייסד המשרד, בעל תואר במשפטים, אחראי במשרד על דיני המיסים ותיקים בעלי אופי מסחרי לרבות דיני עבודה. בעבודתו במשרד מטפל בין השאר בייצוג למול מיסוי מקרקעין, דיוני שומה, הליכי גילוי מרצון, פטור מניכוי מס במקור, מפעל טכנולוגי מועדף, שינויי מבנה, מענקי רשות החדשנות, ייעוץ ותכנון מס ומגוון פתרונות מיסוי."></p>
+                </div>
+
+                <!-- David -->
+                <div class="team-member scroll-reveal">
+                    <div class="member-photo-wrapper">
+                        <div class="hexagon">
+                            <img src="../pictures/david.bmp" alt="David Marzin" class="member-photo">
+                        </div>
+                    </div>
+                    <h3 class="member-name" data-en="David Marzin" data-he="דוד מרזין">David Marzin</h3>
+                    <p class="member-title" data-en="Founding Partner" data-he="שותף מייסד">Founding Partner</p>
+                    <p class="member-bio" data-en="Founding Partner, holds a law degree, responsible for real estate transactions and contracts, as well as enforcement proceedings, wills, and lasting power of attorney. His work at the firm involves handling complex transactions, urban renewal, and dispute resolution. He also deals with commercial transactions, company sales, corporate consulting, company activity sales, engagement agreements, etc." data-he="שותף מייסד במשרד, בעל תואר במשפטים, אחראי במשרד על עסקאות המקרקעין וחוזי הנדל&quot;ן, כמו גם על תחום תיקי הוצאה לפועל, צוואות וייפוי כח מתמשך. בעבודתו במשרד מטפל בעסקאות מורכבות, התחדשות עירונית ויישוב סכסוכים. כמו כן עוסק בייצוג עסקאות מסחריות, מכר חברות, ייעוץ עבור תאגידים, מכר פעילויות חברה, הסכמי התקשרות וכד'."></p>
+                </div>
+
+                <!-- Maayan -->
+                <div class="team-member scroll-reveal">
+                    <div class="member-photo-wrapper">
+                        <div class="hexagon">
+                            <img src="assets/maayan.jpg" alt="Maayan Schneid" class="member-photo">
+                        </div>
+                    </div>
+                    <h3 class="member-name" data-en="Maayan Schneid" data-he="מעין שנייד">Maayan Schneid</h3>
+                    <p class="member-title" data-en="Associate" data-he="עורכת דין במשרד">Associate</p>
+                    <p class="member-bio" data-en="Attorney at the firm, holds a law degree, responsible for managing claims and litigation in tort law and medical malpractice, road accident damages, and National Insurance claims. Her work at the firm involves conducting negotiations for clients, representation in various judicial instances, representation with insurance companies and various entities, handling and accompanying different committees in the National Insurance Institute." data-he="עו&quot;ד במשרד, בעלת תואר במשפטים, אחראית במשרד על ניהול תביעות וליטיגציה בתחום הנזיקין ורלשנות הרפואית, נזקי הפלת&quot;ד ותביעות ביטוח לאומי. בעבודתה במשרד עוסקת בניהול משא ומתן עבור הלקוח, ייצוג בערכאות השיפוטיות השונות, ייצוג למול חברות הביטוח והגופים השונים, מטפלת ומלווה בוועדות השונות בביטוח הלאומי."></p>
                 </div>
             </div>
         </div>
@@ -310,70 +431,39 @@
     </section>-->
     
 
-    <!-- Testimonials -->
-    <section class="testimonials" id="testimonials">
+    <!-- Articles Section -->
+    <section class="articles" id="articles">
         <div class="container">
             <div class="section-header scroll-reveal">
-                <h2 class="section-title" data-en="What Our Clients Say" data-he="מה הלקוחות שלנו אומרים" data-ru="Что говорят наши клиенты">What Our Clients Say</h2>
-                <p class="section-subtitle" data-en="Real testimonials from satisfied clients who received the legal representation they deserved." data-he="המלצות אמיתיות מלקוחות מרוצים שקיבלו את הייצוג המשפטי שהיו ראויים לו." data-ru="Реальные отзывы от довольных клиентов, получивших заслуженное юридическое представительство.">Real testimonials from satisfied clients who received the legal representation they deserved.</p>
+                <h2 class="section-title" data-en="Professional Articles" data-he="מאמרים מקצועיים" data-ru="Профессиональные статьи">מאמרים מקצועיים</h2>
+                <p class="section-subtitle" data-en="Latest insights and professional analysis from our legal experts" data-he="תובנות עדכניות וניתוח מקצועי מהמומחים המשפטיים שלנו" data-ru="Последние аналитические материалы от наших юридических экспертов">תובנות עדכניות וניתוח מקצועי מהמומחים המשפטיים שלנו</p>
             </div>
             
-            <div class="testimonials-slider scroll-reveal">
-                <div class="testimonial">
-                    <div class="stars">★★★★★</div>
-                    <p class="testimonial-text" data-en=""Johnson & Associates handled my personal injury case with incredible professionalism and dedication. They secured a settlement that exceeded my expectations and kept me informed throughout the entire process. I couldn't have asked for better representation."" data-he=""ג'ונסון ושותפים טיפלו בתיק נזקי הגוף שלי עם מקצועיות ומסירות מדהימות. הם השיגו פיצוי שעלה על הציפיות שלי והחזיקו אותי מעודכן לאורך כל התהליך. לא יכולתי לבקש ייצוג טוב יותר."">"Johnson & Associates handled my personal injury case with incredible professionalism and dedication. They secured a settlement that exceeded my expectations and kept me informed throughout the entire process. I couldn't have asked for better representation."</p>
-                    <div class="testimonial-author" data-en="Sarah Martinez" data-he="שרה מרטינז">Sarah Martinez</div>
-                    <div class="testimonial-title" data-en="Personal Injury Client" data-he="לקוחת נזקי גוף">Personal Injury Client</div>
+            <div class="articles-grid">
+                <div class="article-card scroll-reveal">
+                    <div class="article-icon">📝</div>
+                    <h3 data-en="Recent Changes in Tax Laws" data-he="שינויים אחרונים בדיני המס" data-ru="Последние изменения в налоговом законодательстве">שינויים אחרונים בדיני המס</h3>
+                    <p data-en="Analysis of recent tax law changes and their implications for businesses and individuals." data-he="ניתוח של שינויי החקיקה האחרונים בדיני המס והשלכותיהם על עסקים ויחידים">ניתוח של שינויי החקיקה האחרונים בדיני המס והשלכותיהם על עסקים ויחידים</p>
+                    <a href="#" class="article-link" data-en="Read More →" data-he="← קרא עוד" data-ru="Читать далее →">קרא עוד ←</a>
+                </div>
+
+                <div class="article-card scroll-reveal">
+                    <div class="article-icon">📋</div>
+                    <h3 data-en="Real Estate Investment Guide" data-he="מדריך להשקעות נדל״ן" data-ru="Руководство по инвестициям в недвижимость">מדריך להשקעות נדל״ן</h3>
+                    <p data-en="Comprehensive guide to real estate investments and legal considerations in Israel." data-he="מדריך מקיף להשקעות נדל״ן ושיקולים משפטיים בישראל">מדריך מקיף להשקעות נדל״ן ושיקולים משפטיים בישראל</p>
+                    <a href="#" class="article-link" data-en="Read More →" data-he="← קרא עוד" data-ru="Читать далее →">קרא עוד ←</a>
+                </div>
+
+                <div class="article-card scroll-reveal">
+                    <div class="article-icon">⚖️</div>
+                    <h3 data-en="Medical Negligence Claims" data-he="תביעות רשלנות רפואית" data-ru="Иски о врачебной халатности">תביעות רשלנות רפואית</h3>
+                    <p data-en="Understanding your rights and the process of medical negligence claims in Israel." data-he="הבנת זכויותיך ותהליך תביעות הרשלנות הרפואית בישראל">הבנת זכויותיך ותהליך תביעות הרשלנות הרפואית בישראל</p>
+                    <a href="#" class="article-link" data-en="Read More →" data-he="← קרא עוד" data-ru="Читать далее →">קרא עוד ←</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Team Section -->
-    <section class="team" id="theteam">
-        <div class="container">
-            <h2 class="section-title scroll-reveal" data-en="Our Team" data-he="הצוות שלנו">Our Team</h2>
-            <p class="section-subtitle scroll-reveal" data-en="Meet our experienced legal professionals" data-he="הכירו את אנשי המקצוע המנוסים שלנו">Meet our experienced legal professionals</p>
-            
-            <div class="team-grid">
-                <!-- Nehemia -->
-                <div class="team-member scroll-reveal">
-                    <div class="member-photo-wrapper">
-                        <div class="hexagon">
-                            <img src="../pictures/nehemia.bmp" alt="Nehemia Schneid" class="member-photo">
-                        </div>
-                    </div>
-                    <h3 class="member-name" data-en="Nehemia Schneid" data-he="נחמיה שנייד">Nehemia Schneid</h3>
-                    <p class="member-title" data-en="Founding Director" data-he="שותף מנהל ומייסד">Founding Director</p>
-                    <p class="member-bio" data-en="Managing Partner and Founder of the firm, holds a law degree, responsible for tax law and commercial cases including labor law. His work at the firm includes representation in real estate taxation, tax assessments, voluntary disclosure procedures, withholding tax exemptions, preferred technological enterprise, structural changes, Innovation Authority grants, tax planning and consulting, and various tax solutions." data-he="שותף מנהל ומייסד המשרד, בעל תואר במשפטים, אחראי במשרד על דיני המיסים ותיקים בעלי אופי מסחרי לרבות דיני עבודה. בעבודתו במשרד מטפל בין השאר בייצוג למול מיסוי מקרקעין, דיוני שומה, הליכי גילוי מרצון, פטור מניכוי מס במקור, מפעל טכנולוגי מועדף, שינויי מבנה, מענקי רשות החדשנות, ייעוץ ותכנון מס ומגוון פתרונות מיסוי."></p>
-                </div>
-
-                <!-- David -->
-                <div class="team-member scroll-reveal">
-                    <div class="member-photo-wrapper">
-                        <div class="hexagon">
-                            <img src="../pictures/david.bmp" alt="David Marzin" class="member-photo">
-                        </div>
-                    </div>
-                    <h3 class="member-name" data-en="David Marzin" data-he="דוד מרזין">David Marzin</h3>
-                    <p class="member-title" data-en="Founding Partner" data-he="שותף מייסד">Founding Partner</p>
-                    <p class="member-bio" data-en="Founding Partner, holds a law degree, responsible for real estate transactions and contracts, as well as enforcement proceedings, wills, and lasting power of attorney. His work at the firm involves handling complex transactions, urban renewal, and dispute resolution. He also deals with commercial transactions, company sales, corporate consulting, company activity sales, engagement agreements, etc." data-he="שותף מייסד במשרד, בעל תואר במשפטים, אחראי במשרד על עסקאות המקרקעין וחוזי הנדל&quot;ן, כמו גם על תחום תיקי הוצאה לפועל, צוואות וייפוי כח מתמשך. בעבודתו במשרד מטפל בעסקאות מורכבות, התחדשות עירונית ויישוב סכסוכים. כמו כן עוסק בייצוג עסקאות מסחריות, מכר חברות, ייעוץ עבור תאגידים, מכר פעילויות חברה, הסכמי התקשרות וכד'."></p>
-                </div>
-
-                <!-- Maayan -->
-                <div class="team-member scroll-reveal">
-                    <div class="member-photo-wrapper">
-                        <div class="hexagon">
-                            <img src="assets/maayan.jpg" alt="Maayan Schneid" class="member-photo">
-                        </div>
-                    </div>
-                    <h3 class="member-name" data-en="Maayan Schneid" data-he="מעין שנייד">Maayan Schneid</h3>
-                    <p class="member-title" data-en="Associate" data-he="עורכת דין במשרד">Associate</p>
-                    <p class="member-bio" data-en="Attorney at the firm, holds a law degree, responsible for managing claims and litigation in tort law and medical malpractice, road accident damages, and National Insurance claims. Her work at the firm involves conducting negotiations for clients, representation in various judicial instances, representation with insurance companies and various entities, handling and accompanying different committees in the National Insurance Institute." data-he="עו&quot;ד במשרד, בעלת תואר במשפטים, אחראית במשרד על ניהול תביעות וליטיגציה בתחום הנזיקין ורלשנות הרפואית, נזקי הפלת&quot;ד ותביעות ביטוח לאומי. בעבודתה במשרד עוסקת בניהול משא ומתן עבור הלקוח, ייצוג בערכאות השיפוטיות השונות, ייצוג למול חברות הביטוח והגופים השונים, מטפלת ומלווה בוועדות השונות בביטוח הלאומי."></p>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Final CTA -->
     <section class="final-cta" id="contact">
@@ -439,6 +529,9 @@
         </div>
     </footer>
 
+    <!-- Import accessibility features -->
+    <script src="../js/accessibility.js"></script>
+    
     <script type="module">
         // Import translations
         import translations from '../js/translations.js';
@@ -773,6 +866,63 @@
                 options.style.display = 'none';
             }
         });
+
+        // Floating button behavior with state persistence across pages (localStorage).
+        (function(){
+        const FAB_ID = 'fab';
+        const PANEL_ID = 'fab-panel';
+        const STORAGE_KEY = 'fab-panel-open';
+
+        const fab = document.getElementById(FAB_ID);
+        const panel = document.getElementById(PANEL_ID);
+        const panelClose = document.getElementById('fab-panel-close');
+
+        if (!fab || !panel) return;
+
+        function setOpen(open, save=true){
+            if(open){
+            panel.classList.add('open');
+            panel.setAttribute('aria-hidden','false');
+            fab.setAttribute('aria-expanded','true');
+            } else {
+            panel.classList.remove('open');
+            panel.setAttribute('aria-hidden','true');
+            fab.setAttribute('aria-expanded','false');
+            }
+            if (save) localStorage.setItem(STORAGE_KEY, open ? '1' : '0');
+        }
+
+        fab.addEventListener('click', () => {
+            const isOpen = panel.classList.contains('open');
+            setOpen(!isOpen);
+        });
+
+        // close button inside panel
+        if (panelClose){
+            panelClose.addEventListener('click', () => setOpen(false));
+        }
+
+        // close on outside clicks (but ignore clicks on panel or fab)
+        document.addEventListener('click', (e) => {
+            const target = e.target;
+            if (panel.classList.contains('open') && !panel.contains(target) && target !== fab){
+            setOpen(false);
+            }
+        });
+
+        // keyboard accessibility: Esc to close, Alt+F to toggle
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') setOpen(false);
+            if ((e.altKey && (e.key === 'f' || e.key === 'F'))) {
+            e.preventDefault();
+            setOpen(!panel.classList.contains('open'));
+            }
+        });
+
+        // initialize from localStorage so the open/closed state persists across page loads
+        const saved = localStorage.getItem(STORAGE_KEY);
+        setOpen(saved === '1', false);
+        })();
 
         // Make functions available globally
         window.toggleDropdown = toggleDropdown;
