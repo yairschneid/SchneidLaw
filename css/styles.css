@@ -307,8 +307,21 @@
 .logo-text {
     font-size: 28px;
     font-weight: bold;
-    color: white;
+    color: #b8860b;
     text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    height: 50px; /* Fixed height to ensure proper alignment */
+    background: transparent; /* Ensure background is transparent */
+}
+
+.logo-tree {
+    height: 45px;
+    width: auto;
+    object-fit: contain;
+    display: block; /* Ensure it's displayed as a block element */
+    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.3)); /* Add subtle glow effect */
 }
 
 .nav-links {
