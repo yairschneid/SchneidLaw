@@ -143,7 +143,7 @@
 .header {
     background: var(--navy-blue);
     color: white;
-    padding: 15px 0;
+    padding: 10px 0;
     position: fixed;
     top: 0;
     width: 100%;
@@ -153,14 +153,19 @@
 
 .nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    height: 120px;
+    padding: 10px 0;
+    position: relative;
 }
 
 .nav-right {
     display: flex;
     align-items: center;
     gap: 20px;
+    position: absolute;
+    right: 0;
 }
 
 /* Language Switcher */
@@ -299,7 +304,7 @@
 }
 
 .logo {
-    font-size: 28px;
+    font-size: 64px;
     font-weight: bold;
     color: #b8860b;
 }
@@ -311,17 +316,74 @@
     text-decoration: none;
     display: flex;
     align-items: center;
-    gap: 15px;
-    height: 50px; /* Fixed height to ensure proper alignment */
-    background: transparent; /* Ensure background is transparent */
+    justify-content: center;
+    height: 120px;
+    background: transparent;
+    width: 100%;
+    line-height: 1;
+    position: relative;
+    padding: 10px 0;
+}
+
+.logo-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: auto;
+    padding: 0;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.logo-content:hover {
+    transform: translate(-50%, -2px);
+}
+
+[dir="rtl"] .logo-content {
+    flex-direction: column;
+    justify-content: center;
+}
+
+[dir="rtl"] .logo-content {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
 }
 
 .logo-tree {
-    height: 45px;
+    height: 100px;
     width: auto;
     object-fit: contain;
-    display: block; /* Ensure it's displayed as a block element */
-    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.3)); /* Add subtle glow effect */
+    display: block;
+    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.4));
+    margin: 0;
+    transition: transform 0.3s ease;
+}
+
+.logo-name {
+    display: inline-block;
+    color: #b8860b;
+    vertical-align: middle;
+    white-space: nowrap;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+[dir="rtl"] .logo-name {
+    margin-right: 0;
+}
+
+[dir="ltr"] .logo-name {
+    margin-left: 0;
+}
+
+/* Remove the ::after pseudo-elements and use direct content */
+.logo-name {
+    white-space: nowrap;
 }
 
 .nav-links {
@@ -1738,14 +1800,6 @@
     .attorney-portrait {
         height: 250px;
     }
-}
-
-/* Accessibility floating widget (Commented out)
-.accessibility-widget {
-    display: none !important;
-}
-
-/* End of commented out accessibility widget styles */
 }
 
 /* RTL Support */
