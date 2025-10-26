@@ -1,5 +1,5 @@
-// Accessibility widget functionality
-class AccessibilityWidget {
+// Accessibility widget functionality (Commented out)
+/* class AccessibilityWidget {
     constructor() {
         this.init();
         this.fontSizeLevel = 0; // Track font size level: -2 to 2
@@ -204,6 +204,9 @@ class AccessibilityWidget {
 }
 
 // Initialize the widget when the DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    window.accessibilityWidget = new AccessibilityWidget();
-});
+*/ // End of commented out accessibility widget
+
+// Commented out initialization
+// document.addEventListener('DOMContentLoaded', () => {
+//     window.accessibilityWidget = new AccessibilityWidget();
+// });

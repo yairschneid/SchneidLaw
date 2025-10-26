@@ -23,81 +23,11 @@
         </button>
     </div>
 
-    <!-- Accessibility Widget -->
-    <div class="accessibility-widget" id="accessibilityWidget">
-        <button class="accessibility-toggle" aria-label="Open accessibility menu" aria-expanded="false" data-tooltip="Accessibility Menu (Alt + A)">
-            <img src="../pictures/accessibility-icon.svg" alt="Accessibility" width="24" height="24">
-        </button>
-        <div class="accessibility-menu" id="accessibilityMenu" role="menu" aria-hidden="true" tabindex="-1">
-            <h3 data-en="Accessibility Menu" data-he="תפריט נגישות" data-ru="Меню доступности">Accessibility Menu</h3>
-            
-            <!-- Font Size Controls -->
-            <button 
-                onclick="window.accessibilityWidget.adjustFontSize(1)"
-                data-action="increase-font"
-                data-tooltip="Increase text size"
-                aria-label="Increase text size"
-                data-en="Increase Text" 
-                data-he="הגדל טקסט" 
-                data-ru="Увеличить текст">
-                <span class="icon">A+</span> Increase Text
-            </button>
-            <button 
-                onclick="window.accessibilityWidget.adjustFontSize(-1)"
-                data-action="decrease-font"
-                data-tooltip="Decrease text size"
-                aria-label="Decrease text size"
-                data-en="Decrease Text" 
-                data-he="הקטן טקסט" 
-                data-ru="Уменьшить текст">
-                <span class="icon">A-</span> Decrease Text
-            </button>
-            
-            <!-- Display Adjustments -->
-            <button 
-                onclick="window.accessibilityWidget.toggleHighContrast()"
-                data-tooltip="Toggle high contrast mode"
-                aria-label="Toggle high contrast mode"
-                data-en="High Contrast" 
-                data-he="ניגודיות גבוהה" 
-                data-ru="Высокий контраст">
-                <span class="icon">🎨</span> High Contrast
-            </button>
-            <button 
-                onclick="window.accessibilityWidget.toggleLinks()"
-                data-tooltip="Highlight all links on page"
-                aria-label="Highlight all links"
-                data-en="Highlight Links" 
-                data-he="הדגש קישורים" 
-                data-ru="Выделить ссылки">
-                <span class="icon">🔗</span> Highlight Links
-            </button>
-            
-            <!-- Reading Aids -->
-            <button 
-                onclick="window.accessibilityWidget.toggleDyslexiaFont()"
-                data-tooltip="Switch to dyslexia-friendly font"
-                aria-label="Toggle dyslexia font"
-                data-en="Dyslexia Font" 
-                data-he="גופן דיסלקציה" 
-                data-ru="Шрифт для дислексии">
-                <span class="icon">📝</span> Dyslexia Font
-            </button>
-            <button 
-                onclick="window.accessibilityWidget.toggleFocusMode()"
-                data-tooltip="Enable focus mode to reduce distractions"
-                aria-label="Toggle focus mode"
-                data-en="Focus Mode" 
-                data-he="מצב מיקוד" 
-                data-ru="Режим фокусировки">
-                <span class="icon">👁️</span> Focus Mode
-            </button>
-
-            <div class="accessibility-footer">
-                <small data-en="Press ESC to close" data-he="ESC לחץ לסגירה" data-ru="Нажмите ESC чтобы закрыть">Press ESC to close</small>
-            </div>
-        </div>
+    <!-- Accessibility Widget (Commented out)
+    <div class="accessibility-widget" id="accessibilityWidget" style="display: none;">
+        <!-- Widget content removed -->
     </div>
+    -->
 
     <!-- Header -->
     <header class="header">
@@ -516,6 +446,7 @@
     <script src="../js/accessibility.js"></script>
     <script src="../js/whatsapp.js"></script>
     
+    
     <script type="module">
         // Import translations
         import translations from '../js/translations.js';
@@ -914,5 +845,6 @@
         window.toggleMobileMenu = toggleMobileMenu;
         window.closeMobileMenu = closeMobileMenu;
     </script>
+    <script src="https://cdn.enable.co.il/licenses/enable-L49059de8753012v-1025-74959/init.js"></script>
 </body>
 </html>
