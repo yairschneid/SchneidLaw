@@ -11,19 +11,19 @@
 
 .nav {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     height: 120px;
-    padding: 10px 0;
+    padding: 10px 20px;
     position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .nav-right {
     display: flex;
     align-items: center;
     gap: 20px;
-    position: absolute;
-    right: 0;
 }
 
 .logo-text {
@@ -33,28 +33,23 @@
     text-decoration: none;
     display: flex;
     align-items: center;
-    justify-content: center;
     height: 120px;
     background: transparent;
-    width: 100%;
     line-height: 1;
     position: relative;
     padding: 10px 0;
+    margin-left: 20px;
 }
 
 .logo-content {
     display: flex;
     align-items: center;
     gap: 20px;
-    width: auto;
     padding: 0;
     cursor: pointer;
     transition: transform 0.3s ease;
-    flex-direction: column;
-    justify-content: center;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    flex-direction: row;
+    justify-content: flex-start;
 }
 
 .logo-tree {
@@ -206,9 +201,14 @@
     flex-direction: row-reverse;
 }
 
+[dir="rtl"] .logo-text {
+    margin-left: 0;
+    margin-right: 20px;
+}
+
 [dir="rtl"] .logo-content {
     flex-direction: row-reverse;
-    justify-content: flex-end;
+    justify-content: flex-start;
 }
 
 [dir="rtl"] .logo-name {
