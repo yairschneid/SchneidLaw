@@ -1,0 +1,14 @@
+:root {
+    --navy-blue: #003366;
+    --gold: #b8860b;
+    --dark: #1a202c;
+    --light: #f8f9fa;
+    --text-dark: #333;
+    --text-light: #fff;
+    --fab-size: 56px;
+    --fab-margin: 16px;
+    --fab-bg: #007bff;
+    --fab-color: #fff;
+    --fab-shadow: 0 6px 18px rgba(0,0,0,0.18);
+    --panel-width: 280px;
+}

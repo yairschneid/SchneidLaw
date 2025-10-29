@@ -1,0 +1,88 @@
+.services {
+    padding: 100px 0;
+    background: white;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.service-card:last-child {
+    grid-column: span 2;
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+.service-card {
+    background: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    border-left: 4px solid var(--navy-blue);
+    transition: all 0.3s;
+    position: relative;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+}
+
+.service-icon {
+    background: #f8f9fa;
+    width: 70px;
+    height: 70px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    margin-bottom: 25px;
+    color: var(--navy-blue);
+}
+
+.service-card h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #1a202c;
+}
+
+.service-card p {
+    color: #4a5568;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.service-link {
+    color: var(--navy-blue);
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.service-link:hover {
+    color: var(--gold);
+}
+
+/* RTL Support */
+[dir="rtl"] .services-grid {
+    direction: rtl;
+}
+
+[dir="rtl"] .service-card {
+    text-align: right;
+    border-left: none;
+    border-right: 4px solid var(--navy-blue);
+}
+
+[dir="rtl"] .service-link {
+    justify-content: flex-start;
+    flex-direction: row-reverse;
+}
