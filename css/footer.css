@@ -141,11 +141,45 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .footer {
+        padding: 60px 0 20px;
+    }
+    
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 0 15px;
+    }
+    
+    .footer-logo {
+        font-size: 24px;
+    }
+    
+    .footer-heading {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+    
+    .footer-about {
+        font-size: 15px;
+    }
+    
+    .footer-links a,
+    .footer-contact li {
+        font-size: 15px;
+    }
+    
     .newsletter-form {
         flex-direction: column;
     }
     
     .newsletter-button {
         width: 100%;
+    }
+    
+    .footer-bottom {
+        margin-top: 40px;
+        padding-top: 20px;
+        font-size: 14px;
     }
 }

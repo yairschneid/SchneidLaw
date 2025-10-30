@@ -269,3 +269,90 @@ textarea.form-control {
         font-size: 16px;
     }
 }
+
+/* Additional Mobile Responsive Styles */
+@media (max-width: 768px) {
+    .contact {
+        padding: 60px 0;
+    }
+    
+    .contact-container {
+        padding: 0 15px;
+    }
+    
+    .contact-info h2 {
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+    
+    .contact-item {
+        margin-bottom: 15px;
+    }
+    
+    .contact-icon {
+        font-size: 20px;
+    }
+    
+    .contact-text {
+        font-size: 15px;
+    }
+    
+    .contact-form {
+        padding: 30px 25px;
+    }
+    
+    .form-control {
+        font-size: 15px;
+        padding: 10px;
+    }
+    
+    textarea.form-control {
+        min-height: 120px;
+    }
+    
+    .submit-button {
+        width: 100%;
+        padding: 14px 30px;
+    }
+    
+    .final-cta {
+        padding: 60px 0;
+    }
+    
+    .final-cta h2 {
+        font-size: 28px;
+        padding: 0 15px;
+    }
+    
+    .final-cta p {
+        font-size: 15px;
+        padding: 0 15px;
+        margin-bottom: 30px;
+    }
+    
+    .cta-contact {
+        padding: 0 15px;
+    }
+    
+    .contact-box {
+        padding: 30px 25px;
+    }
+    
+    .contact-box h4 {
+        font-size: 20px;
+    }
+    
+    .contact-box p {
+        font-size: 15px;
+    }
+    
+    .waze-link {
+        font-size: 13px;
+        padding: 8px 16px !important;
+    }
+    
+    .waze-icon {
+        width: 20px;
+        height: 20px;
+    }
+}

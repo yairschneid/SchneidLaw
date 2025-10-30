@@ -110,3 +110,43 @@
     justify-content: flex-start;
     flex-direction: row-reverse;
 }
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    .articles {
+        padding: 60px 0;
+    }
+    
+    .articles-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 0 15px;
+    }
+    
+    .article-card {
+        padding: 30px 25px;
+    }
+    
+    .article-image {
+        height: 180px;
+    }
+    
+    .article-content {
+        padding: 25px 20px;
+    }
+    
+    .article-content h3 {
+        font-size: 20px;
+        margin-bottom: 12px;
+    }
+    
+    .article-excerpt {
+        font-size: 15px;
+    }
+    
+    .article-meta {
+        flex-wrap: wrap;
+        gap: 10px;
+        font-size: 13px;
+    }
+}

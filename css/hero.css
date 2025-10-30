@@ -147,3 +147,57 @@
 [dir="rtl"] .cta-buttons {
     direction: rtl;
 }
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    .hero-section {
+        height: auto;
+        min-height: 60vh;
+    }
+    
+    .hero-content {
+        padding: 120px 20px 60px;
+    }
+    
+    .hero-badge {
+        font-size: 12px;
+        padding: 6px 15px;
+    }
+    
+    .hero-title {
+        font-size: 32px;
+        margin-bottom: 15px;
+    }
+    
+    .hero-subtitle {
+        font-size: 16px;
+        margin-bottom: 25px;
+    }
+    
+    .hero-stats {
+        justify-content: center;
+        gap: 20px;
+        margin-bottom: 30px;
+    }
+    
+    .stat-number {
+        font-size: 28px;
+    }
+    
+    .stat-label {
+        font-size: 12px;
+    }
+    
+    .cta-buttons {
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .btn-primary,
+    .btn-secondary {
+        padding: 12px 24px;
+        font-size: 14px;
+        width: 100%;
+        justify-content: center;
+    }
+}

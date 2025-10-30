@@ -82,3 +82,32 @@
 [dir="rtl"] .member-socials {
     flex-direction: row-reverse;
 }
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    .team {
+        padding: 60px 0;
+    }
+    
+    .team-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 0 15px;
+    }
+    
+    .member-info {
+        padding: 25px 20px;
+    }
+    
+    .member-info h3 {
+        font-size: 20px;
+    }
+    
+    .member-role {
+        font-size: 15px;
+    }
+    
+    .member-description {
+        font-size: 15px;
+    }
+}

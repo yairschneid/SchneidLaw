@@ -106,3 +106,50 @@
 [dir="rtl"] .feature-icon-ltr {
     display: none;
 }
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    .about {
+        padding: 60px 0;
+    }
+    
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .about-text {
+        padding-right: 0;
+        padding-left: 0;
+    }
+    
+    .about-text h2 {
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+    
+    .about-text p {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+    
+    .about-features {
+        margin-top: 20px;
+    }
+    
+    .feature-item {
+        margin-bottom: 12px;
+    }
+    
+    .feature-text {
+        font-size: 15px;
+    }
+    
+    .modern-office-image {
+        height: 300px;
+    }
+    
+    [dir="rtl"] .about-text {
+        padding-left: 0;
+    }
+}

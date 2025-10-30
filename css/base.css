@@ -10,6 +10,7 @@ body {
     color: var(--text-dark);
     background: var(--light);
     transition: all 0.3s ease;
+    overflow-x: hidden;
 }
 
 body[dir="rtl"] {
@@ -38,4 +39,23 @@ body[dir="rtl"] {
     color: var(--text-dark);
     max-width: 600px;
     margin: 0 auto;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .section-header {
+        margin-bottom: 40px;
+    }
+    
+    .section-title {
+        font-size: 28px;
+    }
+    
+    .section-subtitle {
+        font-size: 16px;
+    }
 }

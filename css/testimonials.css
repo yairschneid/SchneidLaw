@@ -73,3 +73,42 @@
 [dir="rtl"] .author-info {
     text-align: right;
 }
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    .testimonials {
+        padding: 60px 0;
+    }
+    
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 0 15px;
+    }
+    
+    .testimonial-card {
+        padding: 30px 25px;
+    }
+    
+    .testimonial-quote {
+        font-size: 16px;
+        margin-bottom: 25px;
+    }
+    
+    .author-image {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .author-info h4 {
+        font-size: 16px;
+    }
+    
+    .author-role {
+        font-size: 13px;
+    }
+    
+    .testimonial-rating {
+        font-size: 16px;
+    }
+}
