@@ -1,11 +1,11 @@
 .articles {
     padding: 100px 0;
-    background: #f8f9fa;
+    background: white;
 }
 
 .articles-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 40px;
     max-width: 1200px;
     margin: 0 auto;
@@ -14,14 +14,18 @@
 
 .article-card {
     background: white;
+    padding: 40px;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-    transition: transform 0.3s;
+    border-left: 4px solid var(--navy-blue);
+    transition: all 0.3s;
+    position: relative;
 }
 
 .article-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
 }
 
 .article-image {
@@ -55,7 +59,7 @@
 }
 
 .article-content h3 {
-    font-size: 22px;
+    font-size: 24px;
     margin-bottom: 15px;
     color: #1a202c;
 }
@@ -84,6 +88,12 @@
     direction: rtl;
 }
 
+[dir="rtl"] .article-card {
+    text-align: right;
+    border-left: none;
+    border-right: 4px solid var(--navy-blue);
+}
+
 [dir="rtl"] .article-content {
     text-align: right;
 }
@@ -97,5 +107,6 @@
 }
 
 [dir="rtl"] .article-link {
+    justify-content: flex-start;
     flex-direction: row-reverse;
 }

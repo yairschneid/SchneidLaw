@@ -49,6 +49,7 @@
     flex-direction: row;
     position: relative;
     min-width: fit-content;
+    align-items: center;
 }
 
 .logo-tree {

@@ -1,0 +1,12 @@
+/* Import all CSS components */
+@import 'variables.css';
+@import 'base.css';
+@import 'header.css';
+@import 'hero.css';
+@import 'about.css';
+@import 'services.css';
+@import 'team.css';
+@import 'articles.css';
+@import 'contact.css';
+@import 'footer.css';
+@import 'floating-buttons.css';

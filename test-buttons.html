@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Floating Buttons</title>
+    <style>
+        :root {
+            --fab-size: 45px;
+            --fab-margin: 20px;
+            --fab-bg: #25D366;
+            --fab-color: #fff;
+            --fab-shadow: 0 6px 18px rgba(0,0,0,0.18);
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            height: 200vh;
+            background: linear-gradient(to bottom, #f0f0f0, #ffffff);
+        }
+
+        h1 {
+            padding: 20px;
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .floating-buttons {
+            position: fixed;
+            right: var(--fab-margin);
+            bottom: var(--fab-margin);
+            display: flex;
+            flex-direction: column;
+            gap: var(--fab-margin);
+            z-index: 1000;
+        }
+
+        .fab-button {
+            width: var(--fab-size);
+            height: var(--fab-size);
+            border-radius: 50%;
+            border: none;
+            background-color: var(--fab-bg);
+            color: var(--fab-color);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--fab-shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .fab-button:nth-child(2) {
+            background-color: #0066cc;
+        }
+
+        .fab-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+        }
+
+        .fab-whatsapp-icon,
+        .fab-email-icon {
+            width: calc(var(--fab-size) * 0.5);
+            height: calc(var(--fab-size) * 0.5);
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Action Buttons -->
+    <div class="floating-buttons">
+        <button class="fab-button" onclick="alert('WhatsApp clicked!')" aria-label="Open WhatsApp Chat">
+            <img src="pictures/whatsapp icon transparent.png" alt="WhatsApp" class="fab-whatsapp-icon">
+        </button>
+        <button class="fab-button" onclick="alert('Email clicked!')" aria-label="Send Email">
+            <svg class="fab-email-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+        </button>
+    </div>
+
+    <div class="content">
+        <h1>Test Floating Buttons</h1>
+        <p>Scroll down to test if the buttons stay fixed on the screen...</p>
+        <p>The WhatsApp button should be green (45px diameter).</p>
+        <p>The Email button should be blue (45px diameter).</p>
+        <p>Both should float on the right side as you scroll.</p>
+        
+        <h2>Content to scroll</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scroll down...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scroll down...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scroll down...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scroll down...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scroll down...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scroll down...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scroll down...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scroll down...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scroll down...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scroll down...</p>
+    </div>
+</body>
+</html>
