@@ -3,17 +3,26 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "playwright test"
+    "test": "playwright test",
+    "test:chrome": "playwright test --project=chromium",
+    "test:firefox": "playwright test --project=firefox",
+    "test:safari": "playwright test --project=webkit",
+    "test:mobile": "playwright test --project=\"Mobile Chrome\" --project=\"Mobile Safari\"",
+    "test:debug": "playwright test --debug",
+    "test:ui": "playwright test --ui",
+    "serve": "http-server . -p 8080"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@axe-core/playwright": "^4.11.0"
+    "@axe-core/playwright": "^4.11.0",
+    "http-server": "^14.1.1"
   },
   "devDependencies": {
-    "@playwright/test": "^1.56.1",
-    "@types/node": "^24.9.2"
+    "@playwright/test": "^1.39.0",
+    "@types/node": "^20.8.0",
+    "typescript": "^5.2.2"
   }
 }

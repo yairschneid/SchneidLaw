@@ -1,13 +1,16 @@
 import { test, expect } from '@playwright/test';
 
-test('Desktop Header Layout - LTR Languages', async ({ page }) => {
-  await page.goto('/');
-  await page.waitForLoadState('networkidle');
-  
-  // Switch to English
-  await page.click('.language-switcher');
-  await page.click('.language-option[onclick*="en"]');
-  await page.waitForTimeout(500); // Wait for language change
+test.describe('Header Navigation Tests', () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto('/html/main.html');
+    await page.waitForLoadState('networkidle');
+  });
+
+  test('Desktop Header Layout - LTR Languages', async ({ page }) => {
+    // Switch to English
+    await page.click('.language-switcher');
+    await page.click('.language-option[onclick*="en"]');
+    await page.waitForLoadState('domcontentloaded');
 
   // Verify LTR layout
   await expect(page.locator('.logo')).toBeVisible();
@@ -25,8 +28,11 @@ test('Desktop Header Layout - LTR Languages', async ({ page }) => {
   expect(color).toBe('rgb(184, 134, 11)'); // var(--gold)
 });
 
-test('Desktop Header Layout - RTL Language', async ({ page }) => {
-  await page.goto('/');
+import { test, expect } from '@playwright/test';
+
+test.describe('Header Navigation Tests', () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto('/html/main.html');
   await page.waitForLoadState('networkidle');
   
   // Switch to Hebrew
