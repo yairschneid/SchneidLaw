@@ -1,15 +1,15 @@
 .team {
-    padding: 100px 0;
+    padding: 8% 0;
     background: #f8f9fa;
 }
 
 .team-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 4%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 5%;
 }
 
 .team-member {
@@ -33,25 +33,27 @@
 }
 
 .member-info {
-    padding: 30px;
+    padding: 5%;
 }
 
 .member-info h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
+    font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+    margin-bottom: 2%;
     color: #1a202c;
 }
 
 .member-role {
     color: var(--gold);
     font-weight: 600;
-    margin-bottom: 15px;
+    margin-bottom: 3%;
+    font-size: clamp(0.875rem, 1.8vw, 1rem);
 }
 
 .member-description {
     color: #4a5568;
     line-height: 1.6;
-    margin-bottom: 20px;
+    margin-bottom: 4%;
+    font-size: clamp(0.875rem, 1.8vw, 1rem);
 }
 
 .member-socials {
@@ -62,7 +64,7 @@
 
 .social-link {
     color: #4a5568;
-    font-size: 20px;
+    font-size: clamp(1.125rem, 2.5vw, 1.25rem);
     transition: color 0.3s;
 }
 
@@ -86,28 +88,16 @@
 /* Mobile Responsive Styles */
 @media (max-width: 768px) {
     .team {
-        padding: 60px 0;
+        padding: 10% 0;
     }
     
     .team-grid {
         grid-template-columns: 1fr;
-        gap: 30px;
-        padding: 0 15px;
+        gap: 6%;
+        padding: 0 4%;
     }
     
-    .member-info {
-        padding: 25px 20px;
-    }
-    
-    .member-info h3 {
-        font-size: 20px;
-    }
-    
-    .member-role {
-        font-size: 15px;
-    }
-    
-    .member-description {
-        font-size: 15px;
+    .member-image {
+        height: 280px;
     }
 }

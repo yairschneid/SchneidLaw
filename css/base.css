@@ -20,42 +20,36 @@ body[dir="rtl"] {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 5%;
+    width: 100%;
 }
 
 .section-header {
     text-align: center;
-    margin-bottom: 80px;
+    margin-bottom: 5%;
 }
 
 .section-title {
-    font-size: 42px;
-    margin-bottom: 15px;
+    font-size: clamp(1.75rem, 5vw, 2.625rem);
+    margin-bottom: 1rem;
     color: var(--dark);
 }
 
 .section-subtitle {
-    font-size: 18px;
+    font-size: clamp(0.875rem, 2.5vw, 1.125rem);
     color: var(--text-dark);
-    max-width: 600px;
+    max-width: 90%;
     margin: 0 auto;
+    line-height: 1.6;
 }
 
 /* Mobile Responsive Styles */
 @media (max-width: 768px) {
     .container {
-        padding: 0 15px;
+        padding: 0 4%;
     }
     
     .section-header {
-        margin-bottom: 40px;
-    }
-    
-    .section-title {
-        font-size: 28px;
-    }
-    
-    .section-subtitle {
-        font-size: 16px;
+        margin-bottom: 8%;
     }
 }

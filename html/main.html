@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@400;500;600;700;900&display=swap" rel="stylesheet">
     <link href="../css/styles.css" rel="stylesheet">
     <script src="../js/accessibility.js"></script>
+    <script src="../js/navigation.js"></script>
 </head>
 <body>
 
@@ -365,9 +366,9 @@
                     <p data-en="123 Main Street" data-he="רחוב הראשי 123">123 Main Street</p>
                     <a href="#" onclick="alert('Directions: 123 Main Street, Your City, ST 12345')" data-en="Get Directions" data-he="קבלו הוראות הגעה">Get Directions</a>
                     <div class="waze-navigation">
-                        <a href="https://waze.com/ul?q=123%20Main%20Street" target="_blank" class="waze-link" aria-label="Navigate with Waze">
+                        <a href="#" onclick="openNavigation(event)" class="waze-link" aria-label="Navigate with Waze">
                             <img src="../pictures/waze.png" alt="Waze" class="waze-icon">
-                            <span data-en="Navigate with Waze" data-he="נווט עם Waze">Navigate with Waze</span>
+                            <span data-en="Navigate with Waze" data-he="נווט עם Waze" data-ru="Навигация с Waze">Navigate with Waze</span>
                         </a>
                     </div>
                 </div>

@@ -1,5 +1,5 @@
 .about {
-    padding: 100px 0;
+    padding: 8% 0;
     position: relative;
     background: white;
     overflow: hidden;
@@ -10,57 +10,57 @@
     z-index: 2;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 40px;
+    gap: 4%;
     align-items: start;
 }
 
 .about-text {
-    padding-right: 20px;
+    padding-right: 4%;
 }
 
 .about-text h2 {
-    font-size: 42px;
-    margin-bottom: 20px;
+    font-size: clamp(1.75rem, 5vw, 2.625rem);
+    margin-bottom: 4%;
     color: #1a202c;
     line-height: 1.2;
 }
 
 .about-text p {
-    font-size: 18px;
-    margin-bottom: 20px;
+    font-size: clamp(1rem, 2.5vw, 1.125rem);
+    margin-bottom: 4%;
     color: #4a5568;
     line-height: 1.6;
 }
 
 .about-features {
-    margin-top: 30px;
+    margin-top: 5%;
 }
 
 .feature-item {
     display: flex;
     align-items: center;
-    gap: 15px;
-    margin-bottom: 15px;
+    gap: 3%;
+    margin-bottom: 3%;
     width: 100%;
 }
 
 .feature-content {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 2%;
     flex: 1;
 }
 
 .feature-icon-ltr, .feature-icon-rtl {
     color: var(--gold);
     font-weight: bold;
-    font-size: 18px;
+    font-size: clamp(1rem, 2vw, 1.125rem);
     min-width: 18px;
     text-align: center;
 }
 
 .feature-text {
-    font-size: 16px;
+    font-size: clamp(0.875rem, 1.8vw, 1rem);
     color: #4a5568;
 }
 
@@ -110,43 +110,20 @@
 /* Mobile Responsive Styles */
 @media (max-width: 768px) {
     .about {
-        padding: 60px 0;
+        padding: 10% 0;
     }
     
     .about-content {
         grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 6%;
     }
     
     .about-text {
         padding-right: 0;
-        padding-left: 0;
-    }
-    
-    .about-text h2 {
-        font-size: 28px;
-        margin-bottom: 15px;
-    }
-    
-    .about-text p {
-        font-size: 16px;
-        margin-bottom: 15px;
-    }
-    
-    .about-features {
-        margin-top: 20px;
-    }
-    
-    .feature-item {
-        margin-bottom: 12px;
-    }
-    
-    .feature-text {
-        font-size: 15px;
     }
     
     .modern-office-image {
-        height: 300px;
+        height: 250px;
     }
     
     [dir="rtl"] .about-text {

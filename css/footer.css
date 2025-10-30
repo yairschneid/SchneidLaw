@@ -1,30 +1,31 @@
 .footer {
     background: #1a202c;
     color: white;
-    padding: 80px 0 30px;
+    padding: 6% 0 3%;
 }
 
 .footer-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
+    gap: 4%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 5%;
 }
 
 .footer-logo {
     color: white;
-    font-size: 28px;
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
     font-weight: 700;
-    margin-bottom: 20px;
+    margin-bottom: 4%;
     text-decoration: none;
 }
 
 .footer-about {
     color: #a0aec0;
     line-height: 1.6;
-    margin-bottom: 20px;
+    margin-bottom: 4%;
+    font-size: clamp(0.875rem, 1.8vw, 1rem);
 }
 
 .footer-social {
@@ -34,7 +35,7 @@
 
 .social-icon {
     color: white;
-    font-size: 20px;
+    font-size: clamp(1.125rem, 2.5vw, 1.25rem);
     transition: color 0.3s;
 }
 
@@ -43,19 +44,20 @@
 }
 
 .footer-heading {
-    font-size: 20px;
-    margin-bottom: 25px;
+    font-size: clamp(1.125rem, 2.5vw, 1.25rem);
+    margin-bottom: 4%;
     color: white;
 }
 
 .footer-links li {
-    margin-bottom: 12px;
+    margin-bottom: 3%;
 }
 
 .footer-links a {
     color: #a0aec0;
     text-decoration: none;
     transition: color 0.3s;
+    font-size: clamp(0.875rem, 1.8vw, 1rem);
 }
 
 .footer-links a:hover {
@@ -65,9 +67,10 @@
 .footer-contact li {
     display: flex;
     align-items: flex-start;
-    gap: 15px;
-    margin-bottom: 15px;
+    gap: 3%;
+    margin-bottom: 3%;
     color: #a0aec0;
+    font-size: clamp(0.875rem, 1.8vw, 1rem);
 }
 
 .footer-contact i {
@@ -76,22 +79,24 @@
 
 .footer-newsletter p {
     color: #a0aec0;
-    margin-bottom: 20px;
+    margin-bottom: 4%;
     line-height: 1.6;
+    font-size: clamp(0.875rem, 1.8vw, 1rem);
 }
 
 .newsletter-form {
     display: flex;
-    gap: 10px;
+    gap: 2%;
 }
 
 .newsletter-input {
     flex: 1;
-    padding: 12px;
+    padding: 3%;
     border: 1px solid #2d3748;
     background: #2d3748;
     border-radius: 4px;
     color: white;
+    font-size: clamp(0.875rem, 1.8vw, 1rem);
 }
 
 .newsletter-input::placeholder {
@@ -101,11 +106,13 @@
 .newsletter-button {
     background: var(--gold);
     color: white;
-    padding: 12px 24px;
+    padding: 3% 5%;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s;
+    font-size: clamp(0.875rem, 1.8vw, 1rem);
+    white-space: nowrap;
 }
 
 .newsletter-button:hover {
@@ -113,11 +120,12 @@
 }
 
 .footer-bottom {
-    margin-top: 60px;
-    padding-top: 30px;
+    margin-top: 5%;
+    padding-top: 3%;
     border-top: 1px solid #2d3748;
     text-align: center;
     color: #a0aec0;
+    font-size: clamp(0.75rem, 1.6vw, 0.875rem);
 }
 
 /* RTL Support */
@@ -142,44 +150,26 @@
 /* Responsive Design */
 @media (max-width: 768px) {
     .footer {
-        padding: 60px 0 20px;
+        padding: 10% 0 5%;
     }
     
     .footer-grid {
         grid-template-columns: 1fr;
-        gap: 30px;
-        padding: 0 15px;
-    }
-    
-    .footer-logo {
-        font-size: 24px;
-    }
-    
-    .footer-heading {
-        font-size: 18px;
-        margin-bottom: 20px;
-    }
-    
-    .footer-about {
-        font-size: 15px;
-    }
-    
-    .footer-links a,
-    .footer-contact li {
-        font-size: 15px;
+        gap: 6%;
+        padding: 0 4%;
     }
     
     .newsletter-form {
         flex-direction: column;
+        gap: 3%;
     }
     
     .newsletter-button {
         width: 100%;
+        padding: 4%;
     }
     
     .footer-bottom {
-        margin-top: 40px;
-        padding-top: 20px;
-        font-size: 14px;
+        margin-top: 8%;
     }
 }
