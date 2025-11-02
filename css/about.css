@@ -94,16 +94,20 @@
 }
 
 [dir="rtl"] .feature-content {
-    flex-direction: row-reverse;
+    flex-direction: row;
     width: 100%;
     justify-content: flex-start;
 }
 
-[dir="ltr"] .feature-icon-rtl {
-    display: none;
+[dir="rtl"] .feature-icon-ltr {
+    display: inline-block;
 }
 
-[dir="rtl"] .feature-icon-ltr {
+[dir="rtl"] .feature-text {
+    text-align: right;
+}
+
+[dir="ltr"] .feature-icon-rtl {
     display: none;
 }
 

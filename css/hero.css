@@ -3,6 +3,7 @@
     height: 70vh;
     min-height: 500px;
     overflow: hidden;
+    padding-top: 80px;
 }
 
 .video-background {
@@ -103,6 +104,7 @@
     gap: clamp(1rem, 2vw, 1.25rem);
     flex-wrap: wrap;
     justify-content: center;
+    margin-top: clamp(2rem, 4vh, 3rem);
 }
 
 .btn-primary {
